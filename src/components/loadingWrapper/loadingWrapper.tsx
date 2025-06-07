@@ -1,9 +1,9 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import { useGSAP } from "@gsap/react";
-import "./loading.css"; 
+import "./loading.css";
 
 gsap.registerPlugin(CustomEase);
 
@@ -11,6 +11,7 @@ export const LoadingWrapper = ({
   children,
 }: Readonly<{ children: React.ReactNode }>) => {
   const containerRef = useRef(null);
+  const [loader, setLoader] = useState(false);
 
   useGSAP(
     () => {
@@ -101,77 +102,81 @@ export const LoadingWrapper = ({
     { scope: containerRef }
   );
   return (
-    <div ref={containerRef} className="container">
-      <div className="loader">
-        <div className="overlay">
-          <div className="block"></div>
-          <div className="block"></div>
-        </div>
+    <div ref={containerRef} className="container font-clash">
+      {loader ? (
+        <div className="loader">
+          <div className="overlay">
+            <div className="block"></div>
+            <div className="block"></div>
+          </div>
 
-        <div className="intro-logo">
-          <div className="word" id="word-1">
-            <h1>
-              <span>Salami</span>
-            </h1>
+          <div className="intro-logo">
+            <div className="word" id="word-1">
+              <h1>
+                <span>Salami</span>
+              </h1>
+            </div>
+            <div className="word" id="word-2">
+              <h1>
+                <span>Azeez</span>
+              </h1>
+            </div>
           </div>
-          <div className="word" id="word-2">
-            <h1>
-              <span>Azeez</span>
-            </h1>
-          </div>
-        </div>
-        {/* divider */}
-        <div className="divider"></div>
+          {/* divider */}
+          <div className="divider"></div>
 
-        {/* spinner */}
-        <div className="spinner-container">
-          <div className="spinner"></div>
-        </div>
+          {/* spinner */}
+          <div className="spinner-container">
+            <div className="spinner"></div>
+          </div>
 
-        {/* counter */}
-        <div className="counter">
-          <div className="count">
-            <div className="digit">
-              <h1>0</h1>
+          {/* counter */}
+          <div className="counter">
+            <div className="count">
+              <div className="digit">
+                <h1>0</h1>
+              </div>
+              <div className="digit">
+                <h1>0</h1>
+              </div>
             </div>
-            <div className="digit">
-              <h1>0</h1>
+            <div className="count">
+              <div className="digit">
+                <h1>2</h1>
+              </div>
+              <div className="digit">
+                <h1>7</h1>
+              </div>
             </div>
-          </div>
-          <div className="count">
-            <div className="digit">
-              <h1>2</h1>
+            <div className="count">
+              <div className="digit">
+                <h1>6</h1>
+              </div>
+              <div className="digit">
+                <h1>5</h1>
+              </div>
             </div>
-            <div className="digit">
-              <h1>7</h1>
+            <div className="count">
+              <div className="digit">
+                <h1>9</h1>
+              </div>
+              <div className="digit">
+                <h1>8</h1>
+              </div>
             </div>
-          </div>
-          <div className="count">
-            <div className="digit">
-              <h1>6</h1>
-            </div>
-            <div className="digit">
-              <h1>5</h1>
-            </div>
-          </div>
-          <div className="count">
-            <div className="digit">
-              <h1>9</h1>
-            </div>
-            <div className="digit">
-              <h1>8</h1>
-            </div>
-          </div>
-          <div className="count">
-            <div className="digit">
-              <h1>9</h1>
-            </div>
-            <div className="digit">
-              <h1>9</h1>
+            <div className="count">
+              <div className="digit">
+                <h1>9</h1>
+              </div>
+              <div className="digit">
+                <h1>9</h1>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <></>
+      )}
       {/* container */}
       {children}
     </div>
