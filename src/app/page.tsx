@@ -3,6 +3,7 @@
 import { useRef, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { NextSection } from "@/components/nextSection/nextSection";
 
 export default function Home() {
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -212,12 +213,7 @@ export default function Home() {
       </section>
 
       {/* Next section (example) */}
-      <section 
-        ref={nextSectionRef} 
-        className="h-screen p-[3em] bg-gray-100 text-black flex items-center justify-center"
-      >
-        <h2 className="text-4xl">NEXT SECTION CONTENT</h2>
-      </section>
+      <NextSection ref={nextSectionRef} />
     </section>
   );
 }
