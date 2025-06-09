@@ -8,6 +8,8 @@ export default function Home() {
   const overlayRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLSpanElement>(null);
   const toggleButtonRef = useRef<HTMLSpanElement>(null);
+  const scrollIndicatorRef = useRef<HTMLDivElement>(null);
+  const nextSectionRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
 
   // Memoized mouse move handler for both mouse and touch
@@ -36,6 +38,18 @@ export default function Home() {
     });
   }, []);
 
+  // Handle scroll to next section
+  const handleScrollDown = useCallback(() => {
+    if (nextSectionRef.current) {
+      nextSectionRef.current.scrollIntoView({
+        behavior: "smooth"
+      });
+      
+      // Optional: Close the overlay when scrolling down
+      // handleToggleClick();
+    }
+  }, []);
+
   useGSAP(
     () => {
       window.addEventListener("mousemove", handlePointerMove);
@@ -51,7 +65,7 @@ export default function Home() {
 
   // Enhanced toggle handler with all animations
   const handleToggleClick = useCallback(() => {
-    if (!overlayRef.current || !buttonRef.current || !toggleButtonRef.current) return;
+    if (!overlayRef.current || !buttonRef.current || !toggleButtonRef.current || !scrollIndicatorRef.current) return;
 
     // Button click animation
     gsap.to([buttonRef.current, toggleButtonRef.current], {
@@ -74,6 +88,12 @@ export default function Home() {
             backdropFilter: "blur(0px)",
             duration: 0.4
           });
+          // Hide scroll indicator when closing
+          gsap.to(scrollIndicatorRef.current, {
+            opacity: 0,
+            y: 20,
+            duration: 0.3
+          });
         }
       });
     } else {
@@ -87,6 +107,29 @@ export default function Home() {
           ease: "expo.out",
           onStart: () => {
             gsap.set(overlayRef.current, { willChange: "clip-path, backdrop-filter" });
+          },
+          onComplete: () => {
+            // Animate in the scroll indicator after overlay is fully open
+            if (scrollIndicatorRef.current) {
+              gsap.fromTo(scrollIndicatorRef.current, 
+                { opacity: 0, y: 20 },
+                { 
+                  opacity: 1, 
+                  y: 0,
+                  duration: 0.6,
+                  ease: "power2.out"
+                }
+              );
+              
+              // Create bouncing animation
+              gsap.to(scrollIndicatorRef.current.querySelector(".arrow-down"), {
+                y: 10,
+                duration: 1,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+              });
+            }
           }
         }
       );
@@ -98,10 +141,31 @@ export default function Home() {
     <svg
       viewBox="0 0 62 24"
       fill="none"
+      style={{
+        fill: color
+      }}
       xmlns="http://www.w3.org/2000/svg"
-      className={`m-4 fill-${color}`}
+      className={`m-4`}
     >
       <path d="M61.0607 13.0607C61.6465 12.4749 61.6465 11.5251 61.0607 10.9393L51.5147 1.3934C50.9289 0.807612 49.9792 0.807612 49.3934 1.3934C48.8076 1.97918 48.8076 2.92893 49.3934 3.51472L57.8787 12L49.3934 20.4853C48.8076 21.0711 48.8076 22.0208 49.3934 22.6066C49.9792 23.1924 50.9289 23.1924 51.5147 22.6066L61.0607 13.0607ZM0 13.5H60V10.5H0V13.5Z" />
+    </svg>
+  );
+
+  // Down arrow icon component
+  const ArrowDownIcon = () => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="arrow-down w-6 h-6 mt-2"
+    >
+      <path
+        d="M12 5V19M12 19L19 12M12 19L5 12"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 
@@ -112,7 +176,6 @@ export default function Home() {
         <h1 className="text-[5rem]">EXPECT SICK SH*T FROM HERE ON OUT.</h1>
         <span 
           ref={buttonRef}
-          // onClick={handleToggleClick}
           className="hover-btn w-[60px] h-[60px] rounded-full bg-black flex cursor-pointer mt-8"
         >
           <ArrowIcon color="white" />
@@ -136,6 +199,24 @@ export default function Home() {
         >
           <ArrowIcon color="black" />
         </span>
+
+        {/* Scroll down indicator */}
+        <div 
+          ref={scrollIndicatorRef}
+          onClick={handleScrollDown}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white opacity-0 cursor-pointer hover:opacity-80 transition-opacity"
+        >
+          <span className="text-sm mb-2">SCROLL DOWN</span>
+          <ArrowDownIcon />
+        </div>
+      </section>
+
+      {/* Next section (example) */}
+      <section 
+        ref={nextSectionRef} 
+        className="h-screen p-[3em] bg-gray-100 text-black flex items-center justify-center"
+      >
+        <h2 className="text-4xl">NEXT SECTION CONTENT</h2>
       </section>
     </section>
   );
