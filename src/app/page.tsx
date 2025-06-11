@@ -16,9 +16,9 @@ export default function Home() {
   // Memoized mouse move handler for both mouse and touch
   const handlePointerMove = useCallback((e: MouseEvent | TouchEvent) => {
     if (!overlayRef.current) return;
-    
+
     let clientX, clientY;
-    
+
     if (e instanceof TouchEvent) {
       if (!e.touches[0]) return;
       clientX = e.touches[0].clientX;
@@ -43,9 +43,9 @@ export default function Home() {
   const handleScrollDown = useCallback(() => {
     if (nextSectionRef.current) {
       nextSectionRef.current.scrollIntoView({
-        behavior: "smooth"
+        behavior: "smooth",
       });
-      
+
       // Optional: Close the overlay when scrolling down
       // handleToggleClick();
     }
@@ -55,7 +55,7 @@ export default function Home() {
     () => {
       window.addEventListener("mousemove", handlePointerMove);
       window.addEventListener("touchmove", handlePointerMove);
-      
+
       return () => {
         window.removeEventListener("mousemove", handlePointerMove);
         window.removeEventListener("touchmove", handlePointerMove);
@@ -66,7 +66,13 @@ export default function Home() {
 
   // Enhanced toggle handler with all animations
   const handleToggleClick = useCallback(() => {
-    if (!overlayRef.current || !buttonRef.current || !toggleButtonRef.current || !scrollIndicatorRef.current) return;
+    if (
+      !overlayRef.current ||
+      !buttonRef.current ||
+      !toggleButtonRef.current ||
+      !scrollIndicatorRef.current
+    )
+      return;
 
     // Button click animation
     gsap.to([buttonRef.current, toggleButtonRef.current], {
@@ -74,7 +80,7 @@ export default function Home() {
       duration: 0.2,
       yoyo: true,
       repeat: 1,
-      ease: "power2.inOut"
+      ease: "power2.inOut",
     });
 
     if (isOpen) {
@@ -87,53 +93,54 @@ export default function Home() {
         onStart: () => {
           gsap.to(overlayRef.current, {
             backdropFilter: "blur(0px)",
-            duration: 0.4
+            duration: 0.4,
           });
           // Hide scroll indicator when closing
           gsap.to(scrollIndicatorRef.current, {
             opacity: 0,
             y: 20,
-            duration: 0.3
+            duration: 0.3,
           });
-        }
+        },
       });
     } else {
       // Opening animation
       setIsOpen(true);
-      gsap.to(overlayRef.current, 
-        {
-          clipPath: "circle(200% at var(--x, 50%) var(--y, 50%))",
-          backdropFilter: "blur(4px)",
-          duration: 1.2,
-          ease: "expo.out",
-          onStart: () => {
-            gsap.set(overlayRef.current, { willChange: "clip-path, backdrop-filter" });
-          },
-          onComplete: () => {
-            // Animate in the scroll indicator after overlay is fully open
-            if (scrollIndicatorRef.current) {
-              gsap.fromTo(scrollIndicatorRef.current, 
-                { opacity: 0, y: 20 },
-                { 
-                  opacity: 1, 
-                  y: 0,
-                  duration: 0.6,
-                  ease: "power2.out"
-                }
-              );
-              
-              // Create bouncing animation
-              gsap.to(scrollIndicatorRef.current.querySelector(".arrow-down"), {
-                y: 10,
-                duration: 1,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut"
-              });
-            }
+      gsap.to(overlayRef.current, {
+        clipPath: "circle(200% at var(--x, 50%) var(--y, 50%))",
+        backdropFilter: "blur(4px)",
+        duration: 1.2,
+        ease: "expo.out",
+        onStart: () => {
+          gsap.set(overlayRef.current, {
+            willChange: "clip-path, backdrop-filter",
+          });
+        },
+        onComplete: () => {
+          // Animate in the scroll indicator after overlay is fully open
+          if (scrollIndicatorRef.current) {
+            gsap.fromTo(
+              scrollIndicatorRef.current,
+              { opacity: 0, y: 20 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: "power2.out",
+              }
+            );
+
+            // Create bouncing animation
+            gsap.to(scrollIndicatorRef.current.querySelector(".arrow-down"), {
+              y: 10,
+              duration: 1,
+              repeat: -1,
+              yoyo: true,
+              ease: "sine.inOut",
+            });
           }
-        }
-      );
+        },
+      });
     }
   }, [isOpen]);
 
@@ -143,7 +150,7 @@ export default function Home() {
       viewBox="0 0 62 24"
       fill="none"
       style={{
-        fill: color
+        fill: color,
       }}
       xmlns="http://www.w3.org/2000/svg"
       className={`m-4`}
@@ -171,11 +178,11 @@ export default function Home() {
   );
 
   return (
-    <section className="relative">
+    <section className="relative w-screen">
       {/* Background content */}
       <section className="h-screen p-[3em] bg-white text-black">
         <h1 className="text-[5rem]">EXPECT SICK SH*T FROM HERE ON OUT.</h1>
-        <span 
+        <span
           ref={buttonRef}
           className="hover-btn w-[60px] h-[60px] rounded-full bg-black flex cursor-pointer mt-8"
         >
@@ -188,7 +195,7 @@ export default function Home() {
         ref={overlayRef}
         style={{
           clipPath: "circle(50px at var(--x, 50%) var(--y, 50%))",
-          willChange: "clip-path, backdrop-filter"
+          willChange: "clip-path, backdrop-filter",
         }}
         className="h-screen p-[3em] bg-black text-white absolute top-0 left-0 w-full backdrop-blur-sm"
       >
@@ -202,7 +209,7 @@ export default function Home() {
         </span>
 
         {/* Scroll down indicator */}
-        <div 
+        <div
           ref={scrollIndicatorRef}
           onClick={handleScrollDown}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white opacity-0 cursor-pointer hover:opacity-80 transition-opacity"

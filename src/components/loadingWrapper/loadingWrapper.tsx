@@ -92,7 +92,7 @@ export const LoadingWrapper = ({
         "<"
       );
 
-      tl.to(".block", {
+      tl.to(".block-overlay", {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
         duration: 1,
         stagger: 0.1,
@@ -106,8 +106,8 @@ export const LoadingWrapper = ({
       {loader ? (
         <div className="loader">
           <div className="overlay">
-            <div className="block"></div>
-            <div className="block"></div>
+            <div className="block-overlay"></div>
+            <div className="block-overlay"></div>
           </div>
 
           <div className="intro-logo">
