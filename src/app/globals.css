@@ -1,5 +1,4 @@
-@import url("https://api.fontshare.com/v2/css?f[]=switzer@200,300,301,400,500,600,700&display=swap");
-@import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap');
+
 @import "tailwindcss";
 
 :root {
@@ -7,14 +6,9 @@
   --foreground: #171717;
 }
 
-@theme {
-  --font-switzer: "switzer", sans-serif;
-  --font-clash: 'Clash Display', sans-serif;
-}
-@theme inline {
-  --font-switzer: "Switzer", sans-serif;
-  --font-clash: 'Clash Display', sans-serif;
-}
+/* @theme {
+  --font-switzer: "Switzer-Regular", sans-serif;
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {

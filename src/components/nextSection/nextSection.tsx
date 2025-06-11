@@ -9,7 +9,7 @@ export const NextSection = forwardRef<HTMLElement, React.HTMLAttributes<HTMLElem
         className={`h-screen p-[3em] bg-gray-100 text-black flex items-center justify-center`}
         {...props}
       >
-        <h2 className="text-4xl">NEXT SECTION CONTENT</h2>
+        <h2 className="text-4xl">NEXT SECTION CONTENTG</h2>
       </section>
     );
   }
