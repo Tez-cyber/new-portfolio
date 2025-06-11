@@ -1,15 +1,34 @@
 import { forwardRef } from "react";
+import localFont from 'next/font/local';
+// import switzerBold from ''
 
+const switzer = localFont({
+  src: [
+    {
+      path: '../../app/fonts/switzer/fonts/Switzer-BlackItalic.woff2',
+      weight: '100 900',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-blackItalic',
+});
 
 export const NextSection = forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(
   (props, ref) => {
     return (
       <section
         ref={ref}
-        className={`h-screen p-[3em] bg-gray-100 text-black flex items-center justify-center`}
+        className={`h-screen bg-[#10100e] text-[#ffffe3]`}
         {...props}
       >
-        <h2 className="text-4xl">NEXT SECTION CONTENTG</h2>
+        <h2 
+          style={{
+            fontVariationSettings: '"wght" 900, "ital" 1',
+            fontFamily: 'var(--font-blackItalic)',
+          }}
+          className="text-[110px] leading-[1]">
+            <i>FRONTEND DEVELOPER</i>
+          </h2>
       </section>
     );
   }
