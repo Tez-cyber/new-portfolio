@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import localFont from "next/font/local";
 import Link from "next/link";
 import { FlipLink } from "../RevealLinks";
-// import switzerBold from ''
+
 
 const switzer = localFont({
   src: [

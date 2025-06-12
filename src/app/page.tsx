@@ -12,6 +12,7 @@ export default function Home() {
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
   const nextSectionRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [display, setDisplay] = useState(false);
 
   // Memoized mouse move handler for both mouse and touch
   const handlePointerMove = useCallback((e: MouseEvent | TouchEvent) => {
@@ -179,46 +180,49 @@ export default function Home() {
 
   return (
     <section className="relative w-screen">
-      {/* Background content */}
-      <section className="h-screen p-[3em] bg-white text-black">
-        <h1 className="text-[5rem]">EXPECT SICK SH*T FROM HERE ON OUT.</h1>
-        <span
-          ref={buttonRef}
-          className="hover-btn w-[60px] h-[60px] rounded-full bg-black flex cursor-pointer mt-8"
-        >
-          <ArrowIcon color="white" />
-        </span>
-      </section>
+      {display && (
+        <>
+          {/* Background content */}
+          <section className="h-screen p-[3em] bg-white text-black">
+            <h1 className="text-[5rem]">EXPECT SICK SH*T FROM HERE ON OUT.</h1>
+            <span
+              ref={buttonRef}
+              className="hover-btn w-[60px] h-[60px] rounded-full bg-black flex cursor-pointer mt-8"
+            >
+              <ArrowIcon color="white" />
+            </span>
+          </section>
 
-      {/* Overlay section */}
-      <section
-        ref={overlayRef}
-        style={{
-          clipPath: "circle(50px at var(--x, 50%) var(--y, 50%))",
-          willChange: "clip-path, backdrop-filter",
-        }}
-        className="h-screen p-[3em] bg-black text-white absolute top-0 left-0 w-full backdrop-blur-sm"
-      >
-        <h1 className="text-[5rem]">EXPECT SICK SH*T FROM HERE ON OUT.</h1>
-        <span
-          ref={toggleButtonRef}
-          onClick={handleToggleClick}
-          className="hover-btn2 w-[60px] h-[60px] rounded-full bg-white flex cursor-pointer mt-8"
-        >
-          <ArrowIcon color="black" />
-        </span>
+          {/* Overlay section */}
+          <section
+            ref={overlayRef}
+            style={{
+              clipPath: "circle(50px at var(--x, 50%) var(--y, 50%))",
+              willChange: "clip-path, backdrop-filter",
+            }}
+            className="h-screen p-[3em] bg-black text-white absolute top-0 left-0 w-full backdrop-blur-sm"
+          >
+            <h1 className="text-[5rem]">EXPECT SICK SH*T FROM HERE ON OUT.</h1>
+            <span
+              ref={toggleButtonRef}
+              onClick={handleToggleClick}
+              className="hover-btn2 w-[60px] h-[60px] rounded-full bg-white flex cursor-pointer mt-8"
+            >
+              <ArrowIcon color="black" />
+            </span>
 
-        {/* Scroll down indicator */}
-        <div
-          ref={scrollIndicatorRef}
-          onClick={handleScrollDown}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white opacity-0 cursor-pointer hover:opacity-80 transition-opacity"
-        >
-          <span className="text-sm mb-2">SCROLL DOWN</span>
-          <ArrowDownIcon />
-        </div>
-      </section>
-
+            {/* Scroll down indicator */}
+            <div
+              ref={scrollIndicatorRef}
+              onClick={handleScrollDown}
+              className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white opacity-0 cursor-pointer hover:opacity-80 transition-opacity"
+            >
+              <span className="text-sm mb-2">SCROLL DOWN</span>
+              <ArrowDownIcon />
+            </div>
+          </section>
+        </>
+      )}
       {/* Next section (example) */}
       <NextSection ref={nextSectionRef} />
     </section>
