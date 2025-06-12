@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import localFont from "next/font/local";
+import Link from "next/link";
 // import switzerBold from ''
 
 const switzer = localFont({
@@ -20,7 +21,7 @@ export const NextSection = forwardRef<
   return (
     <section
       ref={ref}
-      className={`h-full bg-bgPrimary text-textPrimary w-full`}
+      className={`h-full bg-bgPrimary text-textPrimary w-full lg:h-screen `}
       {...props}
     >
       {/* heading */}
@@ -28,11 +29,10 @@ export const NextSection = forwardRef<
         style={{
           fontVariationSettings: '"wght" 900, "ital" 1',
           fontFamily: "var(--font-blackItalic)",
-          fontSize: "clamp(48px, 8vw, 110px)", // Responsive font size
+          fontSize: "clamp(48px, 8vw, 110px)",
           lineHeight: 1,
-          // letterSpacing: "-0.02em", // Optional: improves readability at large sizes
         }}
-        className="flex text-center items-baseline gap-2 pt-5 md:pt-0"
+        className="flex text-center items-baseline gap-2 pt-5 md:pt-0 md:pl-7"
       >
         <i>FRONTEND DEVELOPER</i>
         {/*  fullstop */}
@@ -47,7 +47,7 @@ export const NextSection = forwardRef<
         />
       </h2>
       {/* Bottom section */}
-      <div className="flex flex-col px-10 py-6 justify-between items-center md:flex-row">
+      <div className="flex flex-col px-10 py-6 justify-between items-center lg:flex-row">
         <div className="lg:w-[50%]">
           <video src="/port.mp4" autoPlay muted playsInline loop />
         </div>
@@ -57,6 +57,20 @@ export const NextSection = forwardRef<
             a passionate frontend developer specializing in building responsive,
             performant, and accessible web applications.
           </p>
+          {/* Navigation */}
+          <div className="mt-5 flex items-center gap-3">
+            <Link
+              href=""
+              className="text-base border-[1.5px] text-textPrimary rounded-3xl border-solid border-textPrimary px-4 p-3"
+            >
+              See my projects
+            </Link>
+            <span className="text-base relative inline-block before:content-[''] before:absolute before:w-0 
+              before:h-[1.5px] before:bg-textPrimary before:bottom-0 before:left-0 before:mt-2 hover:before:w-full 
+              before:transition-all before:duration-300">
+              <Link href="">Know me</Link>
+            </span>
+          </div>
         </div>
       </div>
     </section>
