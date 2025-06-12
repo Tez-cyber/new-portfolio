@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import localFont from "next/font/local";
 import Link from "next/link";
+import { FlipLink } from "../RevealLinks";
 // import switzerBold from ''
 
 const switzer = localFont({
@@ -59,15 +60,20 @@ export const NextSection = forwardRef<
           </p>
           {/* Navigation */}
           <div className="mt-5 flex items-center gap-3">
-            <Link
-              href=""
-              className="text-base border-[1.5px] text-textPrimary rounded-3xl border-solid border-textPrimary px-4 p-3"
-            >
-              See my projects
-            </Link>
-            <span className="text-base relative inline-block before:content-[''] before:absolute before:w-0 
+            <span className="rounded-3xl border-[1.5px] border-solid border-textPrimary px-4 p-3">
+              <FlipLink
+                href=""
+                // className="text-base border-[1.5px] text-textPrimary rounded-3xl border-solid border-textPrimary px-4 p-3"
+                className="text-base text-textPrimary "
+              >
+                See my projects
+              </FlipLink>
+            </span>
+            <span
+              className="text-base relative inline-block before:content-[''] before:absolute before:w-0 
               before:h-[1.5px] before:bg-textPrimary before:bottom-0 before:left-0 before:mt-2 hover:before:w-full 
-              before:transition-all before:duration-300">
+              before:transition-all before:duration-300"
+            >
               <Link href="">Know me</Link>
             </span>
           </div>
