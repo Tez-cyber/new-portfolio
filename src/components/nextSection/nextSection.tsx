@@ -73,7 +73,7 @@ export const NextSection = forwardRef<
               before:h-[1.5px] before:bg-textPrimary before:bottom-0 before:left-0 before:mt-2 hover:before:w-full 
               before:transition-all before:duration-300"
             >
-              <Link href="">Know me</Link>
+              <Link href="/about">Know me</Link>
             </span>
           </div>
         </div>
