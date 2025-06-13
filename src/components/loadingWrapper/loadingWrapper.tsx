@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import { useGSAP } from "@gsap/react";
 import "./loading.css";
+import { usePathname } from "next/navigation";
 
 gsap.registerPlugin(CustomEase);
 
@@ -12,9 +13,15 @@ export const LoadingWrapper = ({
 }: Readonly<{ children: React.ReactNode }>) => {
   const containerRef = useRef(null);
   const [loader, setLoader] = useState(!false);
+  const pathname = usePathname()
+  console.log(pathname)
 
   useGSAP(
     () => {
+      if(pathname !== "/") {
+        setLoader(false);
+      }
+
       CustomEase.create("hop", "0.9, 0, 0.1, 1");
 
       const tl = gsap.timeline({
