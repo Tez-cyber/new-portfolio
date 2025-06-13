@@ -22,7 +22,7 @@ export const NextSection = forwardRef<
   return (
     <section
       ref={ref}
-      className={`h-full bg-bgPrimary text-textPrimary w-full lg:h-screen `}
+      className={`h-full bg-bgPrimary text-textPrimary w-full z-30 lg:h-screen `}
       {...props}
     >
       {/* heading */}
@@ -63,7 +63,6 @@ export const NextSection = forwardRef<
             <span className="rounded-3xl border-[1.5px] border-solid border-textPrimary px-4 p-3">
               <FlipLink
                 href=""
-                // className="text-base border-[1.5px] text-textPrimary rounded-3xl border-solid border-textPrimary px-4 p-3"
                 className="text-base text-textPrimary "
               >
                 See my projects

@@ -11,7 +11,7 @@ export const LoadingWrapper = ({
   children,
 }: Readonly<{ children: React.ReactNode }>) => {
   const containerRef = useRef(null);
-  const [loader, setLoader] = useState(false);
+  const [loader, setLoader] = useState(!false);
 
   useGSAP(
     () => {
@@ -22,6 +22,9 @@ export const LoadingWrapper = ({
         defaults: {
           ease: "hop",
         },
+        onComplete: () => {
+          setLoader(false)
+        }
       });
 
       const counts = gsap.utils.toArray<HTMLElement>(".count");
@@ -92,7 +95,7 @@ export const LoadingWrapper = ({
         "<"
       );
 
-      tl.to(".block-overlay", {
+      tl.to(".blockOverlay", {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
         duration: 1,
         stagger: 0.1,
@@ -102,12 +105,13 @@ export const LoadingWrapper = ({
     { scope: containerRef }
   );
   return (
-    <div ref={containerRef} className="container font-clash">
+    <div ref={containerRef} className="container">
+      {/* Animation */}
       {loader ? (
         <div className="loader">
           <div className="overlay">
-            <div className="block-overlay"></div>
-            <div className="block-overlay"></div>
+            <div className="blockOverlay block"></div>
+            <div className="blockOverlay block"></div>
           </div>
 
           <div className="intro-logo">
@@ -177,8 +181,10 @@ export const LoadingWrapper = ({
       ) : (
         <></>
       )}
-      {/* container */}
-      {children}
+      {/* Main content */}
+      <section className="bodyWrapper">
+        {children}
+      </section>
     </div>
   );
 };

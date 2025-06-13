@@ -21,6 +21,9 @@
 body {
   /* background: var(--background); */
   color: var(--foreground);
-  font-family: var(--font-switzer);
   overflow-x: hidden;
+}
+
+.bodyWrapper {
+  font-family: var(--font-switzer);
 }
