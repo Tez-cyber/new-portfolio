@@ -49,7 +49,7 @@ export default function Home() {
         </div>
         <div className=" text-gray-400 leading-[1.7] text-xl lg:w-[50%] md:pl-10">
           <p>
-            I'm <span className="text-[#ffffe3] font-bold">Salami Azeez</span>,
+            I&apos;m <span className="text-[#ffffe3] font-bold">Salami Azeez</span>,
             a passionate frontend developer specializing in building responsive,
             performant, and accessible web applications.
           </p>
