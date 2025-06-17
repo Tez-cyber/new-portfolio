@@ -35,7 +35,9 @@ export default function RootLayout({
       <body
         className={`${switzer.variable} antialiased`}
       >
-        <LoadingWrapper children={children} />
+        <LoadingWrapper>
+          {children}
+        </LoadingWrapper>
       </body>
     </html>
   );
