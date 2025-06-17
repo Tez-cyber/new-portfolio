@@ -22,7 +22,7 @@ export default function About() {
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
   const nextSectionRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [display, setDisplay] = useState(!false);
+  const [display] = useState(!false);
 
   // Memoized mouse move handler for both mouse and touch
   const handlePointerMove = useCallback((e: MouseEvent | TouchEvent) => {
@@ -187,7 +187,7 @@ export default function About() {
   const textDisplay = "text-center uppercase flex items-center justify-center md:pt-10";
   const textStyles = {
     fontVariationSettings: '"wght" 900, "ital" 1',
-    fontFamily: "var(--font-blackItalic)",
+    fontFamily: `var(${switzer.variable})`,
     fontSize: "clamp(48px, 10vw, 200px)",
     lineHeight: 1,
   };
