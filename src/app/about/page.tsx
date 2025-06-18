@@ -4,6 +4,7 @@ import { useRef, useState, useCallback } from "react";
 import localFont from "next/font/local";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { NextSection } from "@/components/nextSection/nextSection";
 
 const switzer = localFont({
   src: [
@@ -242,8 +243,8 @@ export default function About() {
           </section>
         </section>
       )}
-      {/* Next section (example) */}
-      {/* <NextSection ref={nextSectionRef} /> */}
+      
+      <NextSection ref={nextSectionRef} />
     </section>
   );
 }
