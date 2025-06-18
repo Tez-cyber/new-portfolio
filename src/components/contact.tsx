@@ -32,7 +32,15 @@ export const Contact = () => {
           <span className="absolute top-0 block w-1 h-10 bg-black rotate-90"></span>
         </div>
       </div>
-      
+      {/* Main content */}
+      <main className="flex items-center justify-center">
+        <FlipLink
+            href=""
+            className=""
+        >
+            Get in touch
+        </FlipLink>
+      </main>
     </section>
   );
 };
