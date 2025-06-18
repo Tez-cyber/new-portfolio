@@ -5,6 +5,7 @@ import { CustomEase } from "gsap/CustomEase";
 import { useGSAP } from "@gsap/react";
 import "./loading.css";
 import { usePathname } from "next/navigation";
+import { Contact } from "../contact";
 
 gsap.registerPlugin(CustomEase);
 
@@ -192,6 +193,12 @@ export const LoadingWrapper = ({
       <section className="bodyWrapper">
         {children}
       </section>
+      {/* Contact section */}
+      {
+        pathname !== "/" ? (
+          <Contact />
+        ) : null
+      }
     </div>
   );
 };
