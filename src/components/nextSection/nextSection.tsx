@@ -17,6 +17,7 @@ export const NextSection = forwardRef<
           >
             about
           </h1>
+          {/* Desc */}
           <div className="text-gray-400 text-lg">
             <p className="md:w-[70%] md:pt-10">
               I'm passionate about building innovative, scalable products that
@@ -56,8 +57,15 @@ export const NextSection = forwardRef<
             I leverage CSS for styling and animations, and GSAP for
             seamless dynamic interactions
           </p>
+          {/* My skills */}
           <div>
-            <h2>Skills</h2>
+            <h2 className="text-sm text-gray-400">Skills</h2>
+            {/*  */}
+            <span className="text-sm">
+                HTML, CSS, Tailwind css, Typescript, JavaScript <br />
+                Reactjs, Nextjs, GSAP, motion, Express, MongoDB {""}
+                <span className="text-gray-400">and more...</span>
+            </span>
           </div>
         </div>
       </section>
