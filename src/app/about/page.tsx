@@ -195,7 +195,7 @@ export default function About() {
   return (
     <section className="relative w-screen">
       {display && (
-        <section className="hidden md:block">
+        <section className="">
           {/* Background content */}
           <section className="h-screen p-[3em] bg-white text-black">
             <h1 style={textStyles} className={`${textDisplay} italic`}>
