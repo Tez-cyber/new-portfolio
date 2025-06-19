@@ -1,4 +1,4 @@
-import { section } from "motion/react-client";
+
 import { FlipLink } from "./RevealLinks";
 
 export const Contact = () => {
@@ -33,10 +33,13 @@ export const Contact = () => {
         </div>
       </div>
       {/* Main content */}
-      <main className="flex items-center justify-center">
+      <main className="flex items-center justify-center mt-[20px]">
         <FlipLink
             href=""
-            className=""
+            className="uppercase italic tracking-tighter font-extrabold"
+            style={{
+              fontSize: "clamp(48px, 8vw, 200px)",
+            }}
         >
             Get in touch
         </FlipLink>
