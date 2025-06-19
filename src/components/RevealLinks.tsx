@@ -6,12 +6,13 @@ interface FlipLinkProps {
   href?: string;
   className?: string;
   style?: React.CSSProperties;
+  target?: React.HTMLAttributeAnchorTarget;
 }
 
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
-export const FlipLink = ({ children, href, className, style }: FlipLinkProps) => {
+export const FlipLink = ({ children, href, className, style, target }: FlipLinkProps) => {
   // Split into individual characters (including spaces)
   const chars = [...children];
 
@@ -19,6 +20,7 @@ export const FlipLink = ({ children, href, className, style }: FlipLinkProps) =>
     <motion.a
       href={href}
       style={style}
+      target={target}
       initial="initial"
       whileHover="hovered"
       className={`relative block overflow-hidden px-4 ${className || ""}`}
