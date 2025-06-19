@@ -7,12 +7,13 @@ interface FlipLinkProps {
   className?: string;
   style?: React.CSSProperties;
   target?: React.HTMLAttributeAnchorTarget;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
-export const FlipLink = ({ children, href, className, style, target }: FlipLinkProps) => {
+export const FlipLink = ({ children, href, className, style, target, onClick }: FlipLinkProps) => {
   // Split into individual characters (including spaces)
   const chars = [...children];
 
@@ -20,6 +21,7 @@ export const FlipLink = ({ children, href, className, style, target }: FlipLinkP
     <motion.a
       href={href}
       style={style}
+      onClick={onClick}
       target={target}
       initial="initial"
       whileHover="hovered"

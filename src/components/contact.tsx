@@ -1,6 +1,30 @@
 import { FlipLink } from "./RevealLinks";
 
 export const Contact = () => {
+  //  Mail
+    const email = "salamitopezeez@gmail.com";
+    const subject = "Interest in Collaboration - [Your Project]";
+    const body = `Hello, I'm [Your Name],
+
+        I saw your portfolio and wanted to discuss a potential project.
+
+        Here's what I need:
+        - [Brief description]
+        - Timeline: [When needed]
+        - Budget: [Range]
+
+        Let me know if you're available for a chat!
+
+        Best,
+        [Your Name]
+        [Your Email]
+        `;
+
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+
   return (
     <section className="relative h-screen flex items-center justify-center w-full bg-white text-black p-20">
       {/* top left */}
@@ -39,7 +63,7 @@ export const Contact = () => {
           freelance engagements.
         </p>
         <FlipLink
-          href=""
+          href={mailtoLink}
           className="uppercase italic tracking-tighter font-extrabold"
           style={{
             fontSize: "clamp(48px, 8vw, 200px)",
@@ -52,7 +76,8 @@ export const Contact = () => {
           {/*  */}
           <div className="absolute flex gap-3 bottom-[80px] left-[100px]">
             <span className="rounded-3xl border-[1.5px] border-solid border-black px-4 py-2">
-              <FlipLink href="https://x.com/tezcyber" 
+              <FlipLink
+                href="https://x.com/tezcyber"
                 className="uppercase italic tracking-tighter"
                 target="_blank"
               >
@@ -60,7 +85,8 @@ export const Contact = () => {
               </FlipLink>
             </span>
             <span className="rounded-3xl border-[1.5px] border-solid border-black px-4 py-2">
-              <FlipLink href="https://www.linkedin.com/in/azeezsalami" 
+              <FlipLink
+                href="https://www.linkedin.com/in/azeezsalami"
                 className="uppercase italic tracking-tighter"
                 target="_blank"
               >
