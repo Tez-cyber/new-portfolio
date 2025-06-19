@@ -1,10 +1,9 @@
-
 import { FlipLink } from "./RevealLinks";
 
 export const Contact = () => {
   return (
-    <section className="relative h-screen bg-white text-black p-20">
-        {/* top left */}
+    <section className="relative h-screen flex items-center justify-center w-full bg-white text-black p-20">
+      {/* top left */}
       <div className="absolute top-[50px] left-[50px]">
         <div className="relative">
           <span className="block w-1 h-10 bg-black"></span>
@@ -33,15 +32,20 @@ export const Contact = () => {
         </div>
       </div>
       {/* Main content */}
-      <main className="flex items-center justify-center mt-[20px]">
+      <main className="">
+        {/* desc */}
+        <p className="text-center uppercase italic">
+          Open to both full-time employment and <br />
+          freelance engagements.
+        </p>
         <FlipLink
-            href=""
-            className="uppercase italic tracking-tighter font-extrabold"
-            style={{
-              fontSize: "clamp(48px, 8vw, 200px)",
-            }}
+          href=""
+          className="uppercase italic tracking-tighter font-extrabold"
+          style={{
+            fontSize: "clamp(48px, 8vw, 200px)",
+          }}
         >
-            Get in touch
+          Get in touch
         </FlipLink>
       </main>
     </section>
