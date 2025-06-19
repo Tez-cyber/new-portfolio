@@ -52,12 +52,16 @@ export const Contact = () => {
           {/*  */}
           <div className="absolute flex gap-3 bottom-[80px] left-[100px]">
             <span className="rounded-3xl border-[1.5px] border-solid border-black px-4 py-2">
-              <FlipLink href="" className="uppercase italic tracking-tighter">
+              <FlipLink href="https://x.com/tezcyber" 
+                className="uppercase italic tracking-tighter"
+              >
                 twitter
               </FlipLink>
             </span>
             <span className="rounded-3xl border-[1.5px] border-solid border-black px-4 py-2">
-              <FlipLink href="" className="uppercase italic tracking-tighter">
+              <FlipLink href="https://www.linkedin.com/in/azeezsalami" 
+                className="uppercase italic tracking-tighter"
+              >
                 Linkedin
               </FlipLink>
             </span>
