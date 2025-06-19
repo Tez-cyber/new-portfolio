@@ -185,7 +185,7 @@ export default function About() {
     </svg>
   );
 
-  const textDisplay = "text-center uppercase flex items-center justify-center md:pt-10";
+  const textDisplay = "text-center uppercase flex items-center justify-center";
   const textStyles = {
     fontVariationSettings: '"wght" 900, "ital" 1',
     fontFamily: `var(${switzer.variable})`,
@@ -197,14 +197,14 @@ export default function About() {
       {display && (
         <section className="">
           {/* Background content */}
-          <section className="h-screen p-[3em] bg-white text-black">
+          <section className="h-screen relative flex flex-col items-center justify-center p-[3em] bg-white text-black">
             <h1 style={textStyles} className={`${textDisplay} italic`}>
               about <br />
               me
             </h1>
             <span
               ref={buttonRef}
-              className="hover-btn w-[60px] h-[60px] rounded-full bg-black flex cursor-pointer mt-8"
+              className="hover-btn absolute bottom-[80px] left-[80px] w-[60px] h-[60px] rounded-full bg-black flex cursor-pointer mt-8"
             >
               <ArrowIcon color="white" />
             </span>
@@ -217,7 +217,7 @@ export default function About() {
               clipPath: "circle(50px at var(--x, 50%) var(--y, 50%))",
               willChange: "clip-path, backdrop-filter",
             }}
-            className="h-screen p-[3em] bg-black text-white absolute top-0 left-0 w-full backdrop-blur-sm"
+            className="h-screen flex flex-col items-center justify-center p-[3em] bg-black text-white absolute top-0 left-0 w-full backdrop-blur-sm"
           >
             <h1 style={textStyles} className={`${textDisplay} italic`}>
               about <br />
@@ -226,7 +226,7 @@ export default function About() {
             <span
               ref={toggleButtonRef}
               onClick={handleToggleClick}
-              className="hover-btn2 w-[60px] h-[60px] rounded-full bg-white flex cursor-pointer mt-8"
+              className="hover-btn2 absolute bottom-[80px] left-[80px] w-[60px] h-[60px] rounded-full bg-white flex cursor-pointer mt-8"
             >
               <ArrowIcon color="black" />
             </span>
