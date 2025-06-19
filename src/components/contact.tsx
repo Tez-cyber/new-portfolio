@@ -50,19 +50,17 @@ export const Contact = () => {
         {/*  */}
         <div className="">
           {/*  */}
-          <div className="absolute flex bottom-[80px] left-[100px]">
-            <FlipLink
-              href=""
-              className="uppercase italic tracking-tighter"
-            >
-              twitter
-            </FlipLink>
-            <FlipLink
-              href=""
-              className="uppercase italic tracking-tighter"
-            >
-              Linkedin
-            </FlipLink>
+          <div className="absolute flex gap-3 bottom-[80px] left-[100px]">
+            <span className="rounded-3xl border-[1.5px] border-solid border-black px-4 py-2">
+              <FlipLink href="" className="uppercase italic tracking-tighter">
+                twitter
+              </FlipLink>
+            </span>
+            <span className="rounded-3xl border-[1.5px] border-solid border-black px-4 py-2">
+              <FlipLink href="" className="uppercase italic tracking-tighter">
+                Linkedin
+              </FlipLink>
+            </span>
           </div>
         </div>
       </main>
