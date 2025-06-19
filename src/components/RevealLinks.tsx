@@ -45,7 +45,7 @@ export const FlipLink = ({ children, href, className, style }: FlipLinkProps) =>
       </div>
 
       {/* Flipped text layer */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 px-4">
         {chars.map((char, i) => (
           <motion.span
             key={`flipped-${i}`}

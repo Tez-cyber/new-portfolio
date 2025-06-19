@@ -47,6 +47,24 @@ export const Contact = () => {
         >
           Get in touch
         </FlipLink>
+        {/*  */}
+        <div className="">
+          {/*  */}
+          <div className="absolute flex bottom-[80px] left-[100px]">
+            <FlipLink
+              href=""
+              className="uppercase italic tracking-tighter"
+            >
+              twitter
+            </FlipLink>
+            <FlipLink
+              href=""
+              className="uppercase italic tracking-tighter"
+            >
+              Linkedin
+            </FlipLink>
+          </div>
+        </div>
       </main>
     </section>
   );
