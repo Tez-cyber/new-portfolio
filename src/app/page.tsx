@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import Link from "next/link";
 import { FlipLink } from "@/components/RevealLinks";
 
-
 const switzer = localFont({
   src: [
     {
@@ -17,9 +16,7 @@ const switzer = localFont({
 
 export default function Home() {
   return (
-    <section
-      className={`bg-bgPrimary text-textPrimary w-screen z-30 h-full flex flex-col items-center lg:h-screen`}
-    >
+    <section className="bg-bgPrimary text-textPrimary w-screen z-30 flex flex-col items-center min-h-screen">
       {/* heading */}
       <h2
         style={{
@@ -31,7 +28,7 @@ export default function Home() {
         className="flex text-center items-baseline gap-2 pt-5 md:pt-0 md:pl-7"
       >
         <i>FRONTEND DEVELOPER</i>
-        {/*  fullstop */}
+        {/* fullstop */}
         <span
           className="bg-textPrimary rounded-full"
           style={{
@@ -42,31 +39,30 @@ export default function Home() {
           }}
         />
       </h2>
-      {/* Bottom section */}
-      <div className="flex flex-col px-10 py-6 justify-between items-center lg:flex-row">
+
+      {/* Bottom section  */}
+      <div className="flex-1 flex flex-col px-10 py-6 justify-between items-center lg:flex-row w-full">
         <div className="lg:w-[50%]">
           <video src="/port.mp4" autoPlay muted playsInline loop />
         </div>
-        <div className=" text-gray-400 leading-[1.7] text-xl lg:w-[50%] md:pl-10">
+        <div className="text-gray-400 leading-[1.7] text-xl pt-10 lg:w-[50%] md:pl-10">
           <p>
-            I&apos;m <span className="text-[#ffffe3] font-bold">Salami Azeez</span>,
-            a passionate frontend developer specializing in building responsive,
+            I&apos;m{" "}
+            <span className="text-[#ffffe3] font-bold">Salami Azeez</span>, a
+            passionate frontend developer specializing in building responsive,
             performant, and accessible web applications.
           </p>
           {/* call to action */}
           <div className="mt-5 flex items-center justify-center gap-4 md:justify-start">
             <span className="rounded-3xl border-[1.5px] border-solid border-textPrimary px-4 p-3">
-              <FlipLink
-                href=""
-                className="text-base text-textPrimary "
-              >
+              <FlipLink href="" className="text-base text-textPrimary">
                 See my projects
               </FlipLink>
             </span>
             <span
               className="text-base relative inline-block before:content-[''] before:absolute before:w-0 
-              before:h-[1.5px] before:bg-textPrimary before:bottom-0 before:left-0 before:mt-2 hover:before:w-full 
-              before:transition-all before:duration-300"
+          before:h-[1.5px] before:bg-textPrimary before:bottom-0 before:left-0 before:mt-2 hover:before:w-full 
+          before:transition-all before:duration-300"
             >
               <Link href="/about">Know me</Link>
             </span>
