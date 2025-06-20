@@ -3,9 +3,12 @@
 import { useRef, useState, useCallback } from "react";
 import localFont from "next/font/local";
 import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useGSAP } from "@gsap/react";
 import { NextSection } from "@/components/nextSection/nextSection";
+import { Contact } from "@/components/contact";
 
+gsap.registerPlugin(ScrollToPlugin);
 const switzer = localFont({
   src: [
     {
@@ -15,6 +18,7 @@ const switzer = localFont({
     },
   ],
   variable: "--font-blackItalic",
+  display: "swap"
 });
 export default function About() {
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -23,7 +27,7 @@ export default function About() {
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
   const nextSectionRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [display] = useState(!false);
+  const [display, setDisplay] = useState(false);
 
   // Memoized mouse move handler for both mouse and touch
   const handlePointerMove = useCallback((e: MouseEvent | TouchEvent) => {
@@ -53,11 +57,29 @@ export default function About() {
 
   // Handle scroll to next section
   const handleScrollDown = useCallback(() => {
-    if (nextSectionRef.current) {
-      nextSectionRef.current.scrollIntoView({
-        behavior: "smooth",
+    setDisplay(true);
+
+    // Wait for the DOM to update
+    setTimeout(() => {
+      if (!nextSectionRef.current) return;
+      gsap.to(window, {
+        duration: 1.2,
+        ease: "power2.inOut",
+        scrollTo: {
+          y: nextSectionRef.current,
+          offsetY: 80, 
+          autoKill: false,
+        },
+        onStart: () => {
+          if (scrollIndicatorRef.current) {
+            gsap.to(scrollIndicatorRef.current, {
+              opacity: 0,
+              duration: 0.3,
+            });
+          }
+        },
       });
-    }
+    }, 50); 
   }, []);
 
   useGSAP(
@@ -193,58 +215,64 @@ export default function About() {
     lineHeight: 1,
   };
   return (
-    <section className="relative w-screen">
-      {display && (
-        <section className="">
-          {/* Background content */}
-          <section className="h-screen relative flex flex-col items-center justify-center p-[3em] bg-white text-black">
-            <h1 style={textStyles} className={`${textDisplay} italic`}>
-              about <br />
-              me
-            </h1>
-            <span
-              ref={buttonRef}
-              className="hover-btn absolute bottom-[80px] left-[80px] w-[60px] h-[60px] rounded-full bg-black flex cursor-pointer mt-8"
-            >
-              <ArrowIcon color="white" />
-            </span>
-          </section>
-
-          {/* Overlay section */}
-          <section
-            ref={overlayRef}
-            style={{
-              clipPath: "circle(50px at var(--x, 50%) var(--y, 50%))",
-              willChange: "clip-path, backdrop-filter",
-            }}
-            className="h-screen flex flex-col items-center justify-center p-[3em] bg-black text-white absolute top-0 left-0 w-full backdrop-blur-sm"
+    <>
+    <section
+      className="relative w-screen"
+    >
+      <section className="">
+        {/* Background content */}
+        <section className="h-screen relative flex flex-col items-center justify-center p-[3em] bg-white text-black">
+          <h1 style={textStyles} className={`${textDisplay} italic`}>
+            about <br />
+            me
+          </h1>
+          <span
+            ref={buttonRef}
+            className="hover-btn absolute bottom-[80px] left-[80px] w-[60px] h-[60px] rounded-full bg-black flex cursor-pointer mt-8"
           >
-            <h1 style={textStyles} className={`${textDisplay} italic`}>
-              about <br />
-              me
-            </h1>
-            <span
-              ref={toggleButtonRef}
-              onClick={handleToggleClick}
-              className="hover-btn2 absolute bottom-[80px] left-[80px] w-[60px] h-[60px] rounded-full bg-white flex cursor-pointer mt-8"
-            >
-              <ArrowIcon color="black" />
-            </span>
-
-            {/* Scroll down indicator */}
-            <div
-              ref={scrollIndicatorRef}
-              onClick={handleScrollDown}
-              className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white opacity-0 cursor-pointer hover:opacity-80 transition-opacity"
-            >
-              <span className="text-sm mb-2">SCROLL DOWN</span>
-              <ArrowDownIcon />
-            </div>
-          </section>
+            <ArrowIcon color="white" />
+          </span>
         </section>
-      )}
-      
-      <NextSection ref={nextSectionRef} />
+
+        {/* Overlay section */}
+        <section
+          ref={overlayRef}
+          style={{
+            clipPath: "circle(50px at var(--x, 50%) var(--y, 50%))",
+            willChange: "clip-path, backdrop-filter",
+          }}
+          className="h-screen flex flex-col items-center justify-center p-[3em] bg-black text-white absolute top-0 left-0 w-full backdrop-blur-sm"
+        >
+          <h1 style={textStyles} className={`${textDisplay} italic`}>
+            about <br />
+            me
+          </h1>
+          <span
+            ref={toggleButtonRef}
+            onClick={handleToggleClick}
+            className="hover-btn2 absolute bottom-[80px] left-[80px] w-[60px] h-[60px] rounded-full bg-white flex cursor-pointer mt-8"
+          >
+            <ArrowIcon color="black" />
+          </span>
+
+          {/* Scroll down indicator */}
+          <div
+            ref={scrollIndicatorRef}
+            onClick={handleScrollDown}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white opacity-0 cursor-pointer hover:opacity-80 transition-opacity"
+          >
+            <span className="text-sm mb-2">SCROLL DOWN</span>
+            <ArrowDownIcon />
+          </div>
+        </section>
+      </section>
     </section>
+    {display && (
+        <>
+          <NextSection ref={nextSectionRef} />
+          <Contact />
+        </>
+      )}
+    </>
   );
 }

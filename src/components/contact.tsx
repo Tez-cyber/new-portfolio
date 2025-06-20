@@ -58,7 +58,7 @@ export const Contact = () => {
       {/* Main content */}
       <main className="">
         {/* desc */}
-        <p className="text-center uppercase italic">
+        <p className="text-center uppercase">
           Open to both full-time employment and <br />
           freelance engagements.
         </p>
@@ -78,7 +78,7 @@ export const Contact = () => {
             <span className="rounded-3xl border-[1.5px] border-solid border-black px-4 py-2">
               <FlipLink
                 href="https://x.com/tezcyber"
-                className="uppercase italic tracking-tighter"
+                className="uppercase tracking-tighter"
                 target="_blank"
               >
                 twitter
@@ -87,7 +87,7 @@ export const Contact = () => {
             <span className="rounded-3xl border-[1.5px] border-solid border-black px-4 py-2">
               <FlipLink
                 href="https://www.linkedin.com/in/azeezsalami"
-                className="uppercase italic tracking-tighter"
+                className="uppercase tracking-tighter"
                 target="_blank"
               >
                 Linkedin
