@@ -18,7 +18,7 @@ const switzer = localFont({
 export default function Home() {
   return (
     <section
-      className={`h-full bg-bgPrimary text-textPrimary w-screen z-30 lg:h-screen `}
+      className={`bg-bgPrimary text-textPrimary w-screen z-30 h-screen `}
     >
       {/* heading */}
       <h2
