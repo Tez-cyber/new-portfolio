@@ -85,3 +85,5 @@ export const NextSection = forwardRef<
     </main>
   );
 });
+
+NextSection.displayName = 'NextSection';
