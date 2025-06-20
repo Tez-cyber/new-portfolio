@@ -16,7 +16,7 @@ const switzer = localFont({
 
 export default function Home() {
   return (
-    <section className="bg-bgPrimary text-textPrimary w-screen z-30 flex flex-col items-center min-h-screen">
+    <section className="bg-bgPrimary text-textPrimary w-screen z-30 flex flex-col items-center justify-center min-h-screen">
       {/* heading */}
       <h2
         style={{
@@ -30,7 +30,7 @@ export default function Home() {
         <i>FRONTEND DEVELOPER</i>
         {/* fullstop */}
         <span
-          className="bg-textPrimary rounded-full"
+          className="bg-textPrimary rounded-full hidden md:block"
           style={{
             width: "clamp(12px, 1.5vw, 16px)",
             height: "clamp(12px, 1.5vw, 16px)",
