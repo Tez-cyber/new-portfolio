@@ -6,11 +6,11 @@ export const NextSection = forwardRef<
   React.HTMLAttributes<HTMLElement>
 >((props, ref) => {
   return (
-    <main {...props} ref={ref} className="bg-black px-10 md:p-20">
+    <main {...props} ref={ref} className="bg-black w-screen px-10 md:p-20">
       {/* top section */}
-      <section className="flex flex-col md:flex-row">
+      <section className="flex flex-col lg:flex-row">
         {/* Left section */}
-        <div className="md:w-[60%]">
+        <div className="md:w-full lg:w-[60%]">
           <h1
             style={{
               fontSize: "clamp(48px, 10vw, 200px)",
@@ -21,7 +21,7 @@ export const NextSection = forwardRef<
           </h1>
           {/* Desc */}
           <div className="text-gray-400 text-lg">
-            <p className="md:w-[70%] md:pt-10">
+            <p className="lg:w-[70%] md:pt-10">
               I&apos;m passionate about building innovative, scalable products
               that offer outstanding user experiences and solve real-world
               problems across diverse industries.
@@ -36,13 +36,13 @@ export const NextSection = forwardRef<
           </div>
         </div>
         {/* Right Section === img */}
-        <div className="flex mt-10 md:w-[40%] md:justify-end">
+        <div className="flex mt-10 lg:w-[40%] lg:justify-end">
           <div className="w-[90%] h-[90%] overflow-hidden">
             <Image
               src="/main.png"
               alt="Main portfolio image"
-              width={1200} // intrinsic width in pixels
-              height={800} // intrinsic height in pixels
+              width={1200} 
+              height={800} 
               className="w-full h-full object-cover"
               priority
             />
@@ -59,8 +59,8 @@ export const NextSection = forwardRef<
         >
           What I do
         </h1>
-        <div className="flex flex-col justify-between md:items-end md:flex-row">
-          <p className="text-gray-400 md:text-3xl md:w-[60%] md:leading-[1.5] md:mt-10">
+        <div className="flex flex-col justify-between lg:items-end lg:flex-row">
+          <p className="text-gray-400 md:text-3xl md:leading-[1.5] md:mt-10 lg:w-[60%]">
             I specialize in TypeScript and JavaScript, building robust frontend
             architectures with React and Next.
             <span className="block my-3">
@@ -71,7 +71,7 @@ export const NextSection = forwardRef<
             dynamic interactions
           </p>
           {/* My skills */}
-          <div className="py-10 md:py-0">
+          <div className="py-10 lg:py-0">
             <h2 className="text-sm text-gray-400">Skills</h2>
             {/*  */}
             <span className="text-sm">
