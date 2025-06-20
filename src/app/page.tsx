@@ -41,7 +41,7 @@ export default function Home() {
       </h2>
 
       {/* Bottom section  */}
-      <div className="flex-1 flex flex-col px-10 py-6 justify-between items-center lg:flex-row w-full">
+      <div className="flex flex-col px-10 py-20 justify-between items-center lg:flex-row md:py-6 w-full">
         <div className="lg:w-[50%]">
           <video src="/port.mp4" autoPlay muted playsInline loop />
         </div>
