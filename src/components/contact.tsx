@@ -26,7 +26,7 @@ export const Contact = () => {
 
 
   return (
-    <section className="relative h-screen flex items-center justify-center w-full bg-white text-black p-20">
+    <section className="relative h-screen flex items-center justify-center w-screen bg-white text-black p-20">
       {/* top left */}
       <div className="absolute top-[50px] left-[50px]">
         <div className="relative">
@@ -62,19 +62,30 @@ export const Contact = () => {
           Open to both full-time employment and <br />
           freelance engagements.
         </p>
+        {/* Medium screens */}
         <FlipLink
           href={mailtoLink}
-          className="uppercase italic tracking-tighter font-extrabold"
+          className="uppercase italic tracking-tighter font-extrabold hidden md:block" 
           style={{
             fontSize: "clamp(48px, 8vw, 200px)",
           }}
         >
           Get in touch
         </FlipLink>
+        {/* small screens */}
+        <a
+          href={mailtoLink}
+          className="uppercase italic whitespace-nowrap px-2 tracking-tighter text-center leading-[1] font-extrabold block md:hidden"
+          style={{
+            fontSize: "clamp(48px, 8vw, 200px)",
+          }}
+        >
+          Get in touch
+        </a>
         {/*  */}
         <div className="">
           {/*  */}
-          <div className="absolute flex gap-3 bottom-[80px] left-[100px]">
+          <div className="absolute flex gap-3 bottom-[80px] left-[70px] md:left-[100px]">
             <span className="rounded-3xl border-[1.5px] border-solid border-black px-4 py-2">
               <FlipLink
                 href="https://x.com/tezcyber"
