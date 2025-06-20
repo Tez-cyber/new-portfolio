@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { forwardRef } from "react";
 
 export const NextSection = forwardRef<
@@ -21,22 +22,32 @@ export const NextSection = forwardRef<
           {/* Desc */}
           <div className="text-gray-400 text-lg">
             <p className="md:w-[70%] md:pt-10">
-              I'm passionate about building innovative, scalable products that
-              offer outstanding user experiences and solve real-world problems
-              across diverse industries.
+              I&apos;m passionate about building innovative, scalable products
+              that offer outstanding user experiences and solve real-world
+              problems across diverse industries.
             </p>
             <p className="md:w-[70%] md:pt-10">
               I&apos;m{" "}
               <span className="text-[#ffffe3] font-bold">Salami Azeez</span>, a
               full-stack developer passionate about building robust
               applications. My interests also extend to the innovative world of
-              web3 development, where I'm keen to explore and contribute.
+              web3 development, where I&apos;m keen to explore and contribute.
             </p>
           </div>
         </div>
         {/* Right Section === img */}
         <div className="flex mt-10 md:w-[40%] md:justify-end">
-          <img className="object-cover size-[90%]" src="/main.png" alt="" />
+          <div className="w-[90%] h-[90%] overflow-hidden">
+            <Image
+              src="/main.png"
+              alt="Main portfolio image"
+              width={1200} // intrinsic width in pixels
+              height={800} // intrinsic height in pixels
+              className="w-full h-full object-cover"
+              priority
+            />
+          </div>
+          {/* <img className="object-cover size-[90%]" src="/main.png" alt="" /> */}
         </div>
       </section>
       {/* second section */}
@@ -56,17 +67,17 @@ export const NextSection = forwardRef<
               My expertise also covers backend development and the rapidly
               evolving field of web3 frontend development.
             </span>
-            I leverage CSS for styling and animations, and GSAP for
-            seamless dynamic interactions
+            I leverage CSS for styling and animations, and GSAP for seamless
+            dynamic interactions
           </p>
           {/* My skills */}
           <div className="py-10 md:py-0">
             <h2 className="text-sm text-gray-400">Skills</h2>
             {/*  */}
             <span className="text-sm">
-                HTML, CSS, Tailwind css, Typescript, JavaScript <br />
-                Reactjs, Nextjs, GSAP, motion, Express, MongoDB {""}
-                <span className="text-gray-400">and more...</span>
+              HTML, CSS, Tailwind css, Typescript, JavaScript <br />
+              Reactjs, Nextjs, GSAP, motion, Express, MongoDB {""}
+              <span className="text-gray-400">and more...</span>
             </span>
           </div>
         </div>
