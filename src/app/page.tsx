@@ -18,7 +18,7 @@ const switzer = localFont({
 export default function Home() {
   return (
     <section
-      className={`bg-bgPrimary text-textPrimary w-screen z-30 h-screen `}
+      className={`bg-bgPrimary text-textPrimary w-screen z-30 h-full flex flex-col items-center lg:h-screen`}
     >
       {/* heading */}
       <h2
@@ -53,8 +53,8 @@ export default function Home() {
             a passionate frontend developer specializing in building responsive,
             performant, and accessible web applications.
           </p>
-          {/* Navigation */}
-          <div className="mt-5 flex items-center gap-3">
+          {/* call to action */}
+          <div className="mt-5 flex items-center justify-center gap-4 md:justify-start">
             <span className="rounded-3xl border-[1.5px] border-solid border-textPrimary px-4 p-3">
               <FlipLink
                 href=""
