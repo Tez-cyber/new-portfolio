@@ -1,0 +1,13 @@
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+  background-color: #000;
+  padding-bottom: 4em;
+  color: #fff;
+}

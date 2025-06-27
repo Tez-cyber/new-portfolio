@@ -1,6 +1,9 @@
+import styles from './portfolio.module.css';
 
 export const PortfolioHeroSection = () => {
   return (
-    <div>portfolioHeroSection</div>
+     <section className={`${styles.hero}`}>
+      <p>Scroll Down</p>
+    </section>
   )
 }
