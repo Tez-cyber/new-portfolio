@@ -168,7 +168,7 @@ export const PortfolioStickySection = () => {
   });
 
   return (
-    <section className={styles.sticky} ref={stickyRef}>
+    <section className={`${styles.sticky}`} ref={stickyRef}>
       <div className={styles.col}>
         <div className={styles.services} ref={servicesRef}>
           <div className={styles.indicator} ref={indicatorRef}></div>
@@ -186,26 +186,26 @@ export const PortfolioStickySection = () => {
         <div className={styles.serviceImgWrapper}>
           <div className={styles.serviceImg} ref={serviceImgRef}>
             <div className={styles.img}>
-              <img src="/assets/img1.jpeg" alt="" />
+              <img src="/assets/img1.png" alt="" />
             </div>
             <div className={styles.img}>
-              <img src="/assets/img2.jpeg" alt="" />
+              <img src="/assets/img2.png" alt="" />
             </div>
             <div className={styles.img}>
-              <img src="/assets/img3.jpeg" alt="" />
+              <img src="/assets/img3.png" alt="" />
             </div>
             <div className={styles.img}>
-              <img src="/assets/img4.jpeg" alt="" />
+              <img src="/assets/img4.png" alt="" />
             </div>
             <div className={styles.img}>
-              <img src="/assets/img5.jpeg" alt="" />
+              <img src="/assets/img5.png" alt="" />
             </div>
-            <div className={styles.img}>
+            {/* <div className={styles.img}>
               <img src="/assets/img6.jpeg" alt="" />
             </div>
             <div className={styles.img}>
               <img src="/assets/img7.jpeg" alt="" />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className={styles.serviceCopy}>
@@ -220,7 +220,7 @@ export const PortfolioStickySection = () => {
           1
         </span>
         <span className={styles.seperator}></span>
-        <span className={styles.totalCount}>8</span>
+        <span className={styles.totalCount}>{projectTitles.length}</span>
       </div>
     </section>
   );

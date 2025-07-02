@@ -2,53 +2,52 @@ export const projectDesc = [
   [
     `We transform your ideas into tangible results. Our deliverables are
     meticulously crafted to exceed expectations, ensuring every project
-    milestone is met with precision and excellence. From concept to completion`
+    milestone is met with precision and excellence. From concept to completion`,
   ],
   [
     `Our brand and event design services create compelling visual
     identities that leave lasting impressions. We craft cohesive brand
     experience and design engaging event spaces that tell your story,
-    connect with your audience, and elevate your brand`
+    connect with your audience, and elevate your brand`,
   ],
   [
     `Through expert videography and photography, we capture the essence of
     your brand. Our visual storytelling combines technical excellence with 
     creative vision, delivering powerful imagery that resonates with your
-    target audience`
+    target audience`,
   ],
   [
     `We transform your ideas into tangible results. Our deliverables are
     meticulously crafted to exceed expectations, ensuring every project
-    milestone is met with precision and excellence. From concept to completion`
+    milestone is met with precision and excellence. From concept to completion`,
   ],
   [
     `Our brand and event design services create compelling visual
     identities that leave lasting impressions. We craft cohesive brand
     experience and design engaging event spaces that tell your story,
-    connect with your audience, and elevate your brand`
+    connect with your audience, and elevate your brand`,
   ],
   [
     `Through expert videography and photography, we capture the essence of
     your brand. Our visual storytelling combines technical excellence with 
     creative vision, delivering powerful imagery that resonates with your
-    target audience`
+    target audience`,
   ],
   [
     `Our web development solutions leverage cutting-edge technologies to
     build robust, scalable digital platforms. We create responsive,
     performance-optimized websites and applications that provide seamless
-    user experiences across all devices.`
-  ]
+    user experiences across all devices.`,
+  ],
 ];
 
-
 export const projectTitles = [
-  "Deliverables",
-  "Brand & Event Design",
-  "Video & Fotographie",
-  "Motion Design",
-  "3D Graphics",
-  "Print & Drukwork",
-  "Digital Antwerp",
-  "Web Dev"
-]
+  "Nsexpress",
+  "Turftriibe",
+  "Matthias Pliessing",
+  "QuickPayex",
+  "Inks & Pixels",
+  // "Print & Drukwork",
+  // "Digital Antwerp",
+  // "Web Dev",
+];
