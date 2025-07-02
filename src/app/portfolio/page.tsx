@@ -9,7 +9,7 @@ export default function Portfolio() {
 
   useGSAP(() => { initLenis() });
   return (
-    <section>
+    <section className="w-full h-[1100vh]">
       <PortfolioHeroSection />
       <PortfolioStickySection />
       <PortfolioOutroSection />

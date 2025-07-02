@@ -1,6 +1,6 @@
 
 export const PortfolioOutroSection = () => {
   return (
-    <div>portfolioOutroSection</div>
+    <div className="text-black">portfolioOutroSection</div>
   )
 }

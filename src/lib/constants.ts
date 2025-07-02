@@ -40,3 +40,15 @@ export const projectDesc = [
     user experiences across all devices.`
   ]
 ];
+
+
+export const projectTitles = [
+  "Deliverables",
+  "Brand & Event Design",
+  "Video & Fotographie",
+  "Motion Design",
+  "3D Graphics",
+  "Print & Drukwork",
+  "Digital Antwerp",
+  "Web Dev"
+]
