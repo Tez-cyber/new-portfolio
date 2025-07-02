@@ -1,53 +1,47 @@
 export const projectDesc = [
   [
-    `We transform your ideas into tangible results. Our deliverables are
-    meticulously crafted to exceed expectations, ensuring every project
-    milestone is met with precision and excellence. From concept to completion`,
+    `We transform your ideas into tangible results. Our deliverables are`,
   ],
   [
-    `Our brand and event design services create compelling visual
-    identities that leave lasting impressions. We craft cohesive brand
-    experience and design engaging event spaces that tell your story,
-    connect with your audience, and elevate your brand`,
+    `Our brand and event design services create compelling visual`,
   ],
   [
-    `Through expert videography and photography, we capture the essence of
-    your brand. Our visual storytelling combines technical excellence with 
-    creative vision, delivering powerful imagery that resonates with your
-    target audience`,
+    `Through expert videography and photography, we capture the essence of`,
   ],
   [
-    `We transform your ideas into tangible results. Our deliverables are
-    meticulously crafted to exceed expectations, ensuring every project
-    milestone is met with precision and excellence. From concept to completion`,
+    `We transform your ideas into tangible results. Our deliverables are`,
   ],
   [
-    `Our brand and event design services create compelling visual
-    identities that leave lasting impressions. We craft cohesive brand
-    experience and design engaging event spaces that tell your story,
-    connect with your audience, and elevate your brand`,
+    `Our brand and event design services create compelling visual`,
   ],
   [
-    `Through expert videography and photography, we capture the essence of
-    your brand. Our visual storytelling combines technical excellence with 
-    creative vision, delivering powerful imagery that resonates with your
-    target audience`,
+    `Through expert videography and photography, we capture the essence of`,
   ],
   [
-    `Our web development solutions leverage cutting-edge technologies to
-    build robust, scalable digital platforms. We create responsive,
-    performance-optimized websites and applications that provide seamless
-    user experiences across all devices.`,
+    `Our web development solutions leverage cutting-edge technologies to`,
   ],
 ];
 
 export const projectTitles = [
-  "Nsexpress",
-  "Turftriibe",
-  "Matthias Pliessing",
-  "QuickPayex",
-  "Inks & Pixels",
-  // "Print & Drukwork",
-  // "Digital Antwerp",
-  // "Web Dev",
+  {
+    title: "Nsexpress",
+    link: "https://ns-express.netlify.app/",
+  },
+  {
+    title: "Turftriibe",
+    link: "https://www.turftriibe.com/",
+  },
+  {
+    title: "Matthias Pliessing",
+    link: "https://matthias-pliessnig.vercel.app/",
+  },
+  {
+    title: "QuickPayex",
+    link: "https://www.quickpayex.com/",
+  },
+  {
+    title: "Inks & Pixels",
+    link: "https://inks-pixels.vercel.app/"
+  },
 ];
+

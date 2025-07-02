@@ -59,9 +59,9 @@
   height: 38px;
 }
 
-.service p {
+.service a{
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
   color: #d5d5d5;
   transition: color 0.3s;
@@ -91,9 +91,6 @@
   height: 250px;
 }
 
-.serviceCopy {
-  width: 60%;
-}
 
 .serviceCopy p {
   color: black;
@@ -160,6 +157,7 @@
 @media (max-width: 900px) {
   .sticky {
     flex-direction: column;
+    height: 80vh;
   }
 
   .col:nth-child(1) {
@@ -168,17 +166,18 @@
   }
 
   .col:nth-child(2) {
-    flex-direction: row;
+    /* flex-direction: row; */
     gap: 1.5em;
+    margin: 0 30px;
   }
 
   .serviceImgWrapper {
-    width: 40%;
+    width: 100%;
   }
 
   .serviceCopy p {
-    font-size: 14px;
-    padding-right: 5px;
+    width: 100%;
+    font-size: 18px;
   }
 
   .progressBar {

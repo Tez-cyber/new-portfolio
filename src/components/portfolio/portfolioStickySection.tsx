@@ -8,7 +8,6 @@ import SplitType from "split-type";
 import styles from "./portfolio.module.css";
 import { projectDesc, projectTitles } from "@/lib/constants";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 export const PortfolioStickySection = () => {
@@ -19,7 +18,6 @@ export const PortfolioStickySection = () => {
   const progressRef = useRef<HTMLDivElement>(null);
   const currentCountRef = useRef<HTMLSpanElement>(null);
   const serviceCopyRef = useRef<HTMLParagraphElement>(null);
-
 
   useGSAP(() => {
     if (
@@ -134,7 +132,9 @@ export const PortfolioStickySection = () => {
         ) {
           currentIndex = activeIndex;
 
-          serviceElements.forEach((service) => service.classList.remove(styles.active));
+          serviceElements.forEach((service) =>
+            service.classList.remove(styles.active)
+          );
           serviceElements[activeIndex].classList.add(styles.active);
 
           await Promise.all([
@@ -174,10 +174,16 @@ export const PortfolioStickySection = () => {
           <div className={styles.indicator} ref={indicatorRef}></div>
           {projectTitles.map((item, i) => (
             <div
-              key={item}
+              key={i}
               className={`${styles.service} ${i === 0 ? styles.active : ""}`}
             >
-              <p>{item}</p>
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item.title}
+              </a>
             </div>
           ))}
         </div>
@@ -208,8 +214,9 @@ export const PortfolioStickySection = () => {
             </div> */}
           </div>
         </div>
-        <div className={styles.serviceCopy}>
+        <div className={`${styles.serviceCopy} md:w-[60%]`}>
           <p ref={serviceCopyRef}>{projectDesc[0][0]}</p>
+          {/* <Link href="#"></Link> */}
         </div>
       </div>
       <div className={styles.progressBar}>
