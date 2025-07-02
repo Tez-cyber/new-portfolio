@@ -71,7 +71,7 @@ export const PortfolioStickySection = () => {
     document.body.removeChild(measureContainer);
 
     gsap.set(indicator, {
-      width: serviceWidths[0],
+      width: 500,
       xPercent: -50,
       left: "50%",
     });
@@ -140,7 +140,7 @@ export const PortfolioStickySection = () => {
           await Promise.all([
             gsap.to(indicator, {
               y: activeIndex * serviceHeight,
-              width: serviceWidths[activeIndex],
+              // width: serviceWidths[activeIndex],
               duration: 0.5,
               ease: "power3.inOut",
               overwrite: true,
