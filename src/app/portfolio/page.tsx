@@ -11,7 +11,7 @@ export default function Portfolio() {
   useGSAP(() => { initLenis() });
   return (
     <section className="w-full md:h-[1100vh]">
-      <PortfolioHeroSection />
+      {/* <PortfolioHeroSection /> */}
       <PortfolioStickySection />
       <Contact />
       {/* <PortfolioOutroSection /> */}
