@@ -20,13 +20,13 @@ export const NextSection = forwardRef<
             about
           </h1>
           {/* Desc */}
-          <div className="text-gray-400 text-lg">
+          <div className="text-gray-400 text-2xl">
             <p className="lg:w-[70%] md:pt-10">
               I&apos;m passionate about building innovative, scalable products
               that offer outstanding user experiences and solve real-world
               problems across diverse industries.
             </p>
-            <p className="md:w-[70%] md:pt-10">
+            <p className="pt-10 md:w-[70%]">
               I&apos;m{" "}
               <span className="text-[#ffffe3] font-bold">Salami Azeez</span>, a
               full-stack developer passionate about building robust
