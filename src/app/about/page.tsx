@@ -7,6 +7,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useGSAP } from "@gsap/react";
 import { NextSection } from "@/components/nextSection/nextSection";
 import { Contact } from "@/components/contact";
+import { Navbar } from "@/components/bottomNavbar";
 
 gsap.registerPlugin(ScrollToPlugin);
 const switzer = localFont({
@@ -216,6 +217,7 @@ export default function About() {
   };
   return (
     <>
+    <Navbar />
     <section
       className="relative w-screen"
     >

@@ -2,9 +2,9 @@ import { FlipLink } from "./RevealLinks";
 
 export const Contact = () => {
   //  Mail
-    const email = "salamitopezeez@gmail.com";
-    const subject = "Interest in Collaboration - [Your Project]";
-    const body = `Hello, I'm [Your Name],
+  const email = "salamitopezeez@gmail.com";
+  const subject = "Interest in Collaboration - [Your Project]";
+  const body = `Hello, I'm [Your Name],
 
         I saw your portfolio and wanted to discuss a potential project.
 
@@ -20,10 +20,9 @@ export const Contact = () => {
         [Your Email]
         `;
 
-    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-
+  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
 
   return (
     <section className="relative h-screen flex items-center justify-center w-screen bg-white text-black p-20">
@@ -65,7 +64,7 @@ export const Contact = () => {
         {/* Medium screens */}
         <FlipLink
           href={mailtoLink}
-          className="uppercase italic tracking-tighter font-extrabold hidden md:block" 
+          className="uppercase italic tracking-tighter font-extrabold hidden md:block"
           style={{
             fontSize: "clamp(48px, 8vw, 200px)",
           }}
