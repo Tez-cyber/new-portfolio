@@ -55,7 +55,7 @@ export default function Home() {
           {/* call to action */}
           <div className="mt-5 flex items-center justify-center gap-4 md:justify-start">
             <span className="rounded-3xl border-[1.5px] border-solid border-textPrimary px-4 p-3">
-              <FlipLink href="/portfolio;" className="text-base text-textPrimary">
+              <FlipLink href="/portfolio" className="text-base text-textPrimary">
                 See my projects
               </FlipLink>
             </span>
