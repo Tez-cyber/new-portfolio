@@ -2,9 +2,11 @@
 import { useState, useRef, Dispatch, SetStateAction } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
   const [hideNav, setHideNav] = useState(false);
+  const pathname = usePathname();
 
   const { scrollY } = useScroll();
   const lastYRef = useRef(0);
@@ -45,24 +47,13 @@ export const Navbar = () => {
           duration: 0.75,
         }}
         className={`
+          ${pathname === "/about" ? "z-auto" : "z-10"}
           fixed bottom-[20px] left-1/2 transform -translate-x-1/2
           h-[60px] text-darkblue flex items-center justify-center 
         `}
       >
         <div className="py-2 px-5 text-bgPrimary rounded-2xl">
           {/* Nav links */}
-          {/* <ul className="flex gap-5">
-            {navLinks.map((link, i) => (
-              <li
-                className="transition-all duration-150 uppercase rounded-lg hover:-translate-y-1"
-                key={i}
-              >
-                <Link href={link.link} className="">
-                  {link.name}
-                </Link>{" "}
-              </li>
-            ))}
-          </ul> */}
           <SlideTabs />
         </div>
       </motion.nav>
