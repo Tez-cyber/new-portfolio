@@ -2,18 +2,14 @@
 import { useState, useRef, Dispatch, SetStateAction } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
-  const [openNav, setOpenNav] = useState(false);
   const [hideNav, setHideNav] = useState(false);
-  const [isAtTop, setIsAtTop] = useState(true);
 
   const { scrollY } = useScroll();
   const lastYRef = useRef(0);
   useMotionValueEvent(scrollY, "change", (y) => {
     const difference = y - lastYRef.current;
-    setIsAtTop(y <= 10);
     if (Math.abs(difference) > 50) {
       setHideNav(difference > 0);
       lastYRef.current = y;
@@ -150,9 +146,3 @@ const Cursor = ({ position }: { position: Position }) => {
     />
   );
 };
-
-const navLinks = [
-  { name: "Home", link: "/" },
-  { name: "About", link: "/about" },
-  { name: "Projects", link: "/portfolio" },
-];

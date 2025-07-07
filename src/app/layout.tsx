@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import "./globals.css";
 import { LoadingWrapper } from "@/components/loadingWrapper/loadingWrapper";
-import { Navbar } from "@/components/bottomNavbar";
 
 
 const switzer = localFont({

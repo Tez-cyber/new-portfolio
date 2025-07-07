@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import styles from "./portfolio.module.css";
 import { projectDesc, projectTitles } from "@/lib/constants";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -177,11 +178,7 @@ export const PortfolioStickySection = () => {
               key={i}
               className={`${styles.service} ${i === 0 ? styles.active : ""}`}
             >
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
                 {item.title}
               </a>
             </div>
@@ -192,32 +189,75 @@ export const PortfolioStickySection = () => {
         <div className={styles.serviceImgWrapper}>
           <div className={styles.serviceImg} ref={serviceImgRef}>
             <div className={styles.img}>
-              <img src="/assets/img1.png" alt="" />
+              <Image
+                src="/assets/img1.png"
+                width={250}
+                height={250}
+                alt=""
+                className="object-cover w-full h-full"
+                loading="lazy"
+              />
             </div>
             <div className={styles.img}>
-              <img src="/assets/img2.png" alt="" />
+              <Image
+                src="/assets/img2.png"
+                width={250}
+                height={250}
+                alt=""
+                className="object-cover w-full h-full"
+                loading="lazy"
+              />
             </div>
             <div className={styles.img}>
-              <img src="/assets/img3.png" alt="" />
+              <Image
+                src="/assets/img3.png"
+                width={250}
+                height={250}
+                alt=""
+                className="object-cover w-full h-full"
+                loading="lazy"
+              />
             </div>
             <div className={styles.img}>
-              <img src="/assets/img4.png" alt="" />
+              <Image
+                src="/assets/img4.png"
+                width={250}
+                height={250}
+                alt=""
+                className="object-cover w-full h-full"
+                loading="lazy"
+              />
             </div>
             <div className={styles.img}>
-              <img src="/assets/img5.png" alt="" />
+              <Image
+                src="/assets/img5.png"
+                width={250}
+                height={250}
+                alt=""
+                className="object-cover w-full h-full"
+                loading="lazy"
+              />
             </div>
             <div className={styles.img}>
-              <img src="/assets/img6.png" alt="" />
+              <Image
+                src="/assets/img6.png"
+                width={250}
+                height={250}
+                alt=""
+                className="object-cover w-full h-full"
+                loading="lazy"
+              />
             </div>
             <div className={styles.img}>
-              <img src="/assets/img7.png" alt="" />
+              <Image
+                src="/assets/img7.png"
+                width={250}
+                height={250}
+                alt=""
+                className="object-cover w-full h-full"
+                loading="lazy"
+              />
             </div>
-            {/* <div className={styles.img}>
-              <img src="/assets/img6.jpeg" alt="" />
-            </div>
-            <div className={styles.img}>
-              <img src="/assets/img7.jpeg" alt="" />
-            </div> */}
           </div>
         </div>
         <div className={`${styles.serviceCopy} md:w-[60%]`}>
