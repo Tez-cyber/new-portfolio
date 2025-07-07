@@ -60,11 +60,11 @@ export const PortfolioStickySection = () => {
 
     // Select all service elements inside services
     const serviceElements = services.querySelectorAll(`.${styles.service}`);
-    const serviceWidths = Array.from(serviceElements).map((service) => {
-      measureContainer.textContent =
-        service.querySelector("p")?.textContent || "";
-      return measureContainer.offsetWidth + 8;
-    });
+    // const serviceWidths = Array.from(serviceElements).map((service) => {
+    //   measureContainer.textContent =
+    //     service.querySelector("p")?.textContent || "";
+    //   return measureContainer.offsetWidth + 8;
+    // });
 
     document.body.removeChild(measureContainer);
 
@@ -205,6 +205,12 @@ export const PortfolioStickySection = () => {
             </div>
             <div className={styles.img}>
               <img src="/assets/img5.png" alt="" />
+            </div>
+            <div className={styles.img}>
+              <img src="/assets/img6.png" alt="" />
+            </div>
+            <div className={styles.img}>
+              <img src="/assets/img7.png" alt="" />
             </div>
             {/* <div className={styles.img}>
               <img src="/assets/img6.jpeg" alt="" />

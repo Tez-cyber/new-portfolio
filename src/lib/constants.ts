@@ -1,24 +1,24 @@
 export const projectDesc = [
   [
-    `We transform your ideas into tangible results. Our deliverables are`,
+    `IT and Branding Agency`,
   ],
   [
-    `Our brand and event design services create compelling visual`,
+    `TurfTriibe is a platform that connects sports enthusiasts`,
   ],
   [
-    `Through expert videography and photography, we capture the essence of`,
+    `Matthias Pliessing is a renowned artist and designer`,
   ],
   [
-    `We transform your ideas into tangible results. Our deliverables are`,
+    `QuickPayex is a cutting-edge giftcard payment processing solution`,
   ],
   [
-    `Our brand and event design services create compelling visual`,
+    `Inks & Pixels - Printing agency`,
   ],
   [
-    `Through expert videography and photography, we capture the essence of`,
+    `HRLead - Managerial Optimization for companies`,
   ],
   [
-    `Our web development solutions leverage cutting-edge technologies to`,
+    `Amfaj - Exceptional AgriculturalCommodities`,
   ],
 ];
 
@@ -42,6 +42,14 @@ export const projectTitles = [
   {
     title: "Inks & Pixels",
     link: "https://inks-pixels.vercel.app/"
+  },
+  {
+    title: "HrLead",
+    link: "https://hrlead.vercel.app/"
+  },
+  {
+    title: "Amfaj",
+    link: "https://amfaj.vercel.app/"
   },
 ];
 
