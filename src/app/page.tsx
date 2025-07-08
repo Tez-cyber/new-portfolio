@@ -1,7 +1,8 @@
 "use client";
 import localFont from "next/font/local";
 import Link from "next/link";
-import { FlipLink } from "@/components/RevealLinks";
+import noise from "./noise.gif"
+// import { FlipLink } from "@/components/RevealLinks";
 
 const switzer = localFont({
   src: [
@@ -16,56 +17,75 @@ const switzer = localFont({
 
 export default function Home() {
   return (
-    <section className="bg-[#0d0d0d] text-black w-full md:w-screen min-h-screen p-5">
+    <section className="bg-[#0d0d0d] text-textPrimary w-full md:w-screen min-h-screen p-5">
+      <div className="noise"></div>
       <div className="grid gap-4 h-full lg:grid-cols-[70%_28.5%] border-[2px] border-solid border-textPrimary/30 p-4 rounded-3xl">
         {/* First grid */}
         <div className="rounded-xl flex gap-4 flex-col">
           {/* Parent grid for top section */}
           <div className="rounded-xl lg:h-[205px] grid gap-4 lg:grid-cols-[48%_24%_24%]">
             {/* First */}
-            <div className="bg-green-200 p-20 rounded-2xl">Intro</div>
+            <div className="bg-[#191919] p-20 rounded-2xl">
+              Intro
+            </div>
             {/* Second */}
             {/* Display for md devices */}
-            <div className="grid gap-4 md:grid-cols-[30%_68%] lg:hidden">
-              <div className="bg-green-200 p-20 rounded-2xl hidden md:block">Image Medium</div>
-              <div className="bg-red-200 p-20 rounded-2xl">About Medium</div>
+            <div className="hidden md:grid gap-4 md:grid-cols-[30%_68%] lg:hidden">
+              <Image className="" />
+              <About />
             </div>
             <div className="bg-red-200 p-20 rounded-2xl lg:block">stack</div>
             {/* Third */}
             {/* Display for medium */}
             <div className="hidden md:grid lg:hidden grid-cols-[49%_49%] gap-4 ">
               <div className="bg-red-200 p-20 rounded-2xl">stack</div>
-              <div className="bg-blue-200 p-20 rounded-2xl">contact</div>
+              <Contact />
             </div>
-            {/* Display for large */}
-            <div className="bg-blue-200 p-20 rounded-2xl md:hidden lg:block">contact Large</div>
+            {/* Display for large and small */}
+            <Contact className="md:hidden lg:block" />
           </div>
-          {/* Parent for bottom grid */}
+          {/* Parent for bottom grid ==== large screen */}
           <div className="lg:h-[250px] rounded-xl gap-4 hidden lg:grid lg:grid-cols-[24%_48%_24%]">
             {/* First */}
-            <div className="bg-green-200 p-20 rounded-2xl">Image Large</div>
+            <Image />
             {/* Second */}
-            <div className="bg-red-200 p-20 rounded-2xl">About</div>
+            <About />
             {/* Third */}
-            <div className="bg-blue-200 p-20 rounded-2xl">socials large</div>
+            <Socials />
           </div>
         </div>
         {/* Second grid */}
         <div className="bg-blue-200 p-20 rounded-2xl">Portfolio</div>
-        <div className="bg-blue-200 p-20 rounded-2xl lg:hidden">socials medium</div>
+        <Socials className="lg:hidden" />
       </div>
     </section>
   );
 }
 
+interface GeneralProps {
+  className?: string;
+}
+const Contact = ({ className }: GeneralProps) => {
+  return (
+    <div className={`${className} bg-blue-200 p-20 rounded-2xl`}>Contact</div>
+  );
+};
 
-const Contact = () => {
+const Socials = ({ className }: GeneralProps) => {
   return (
-    <></>
-  )
-}
-const Socials = () => {
+    <div className={`${className} bg-blue-200 p-20 rounded-2xl`}>socials</div>
+  );
+};
+
+const Image = ({ className }: GeneralProps) => {
   return (
-    <></>
-  )
-}
+    <div className={`${className} bg-blue-200 p-20 rounded-2xl`}>Image</div>
+  );
+};
+
+const About = ({ className }: GeneralProps) => {
+  return (
+    <div className={`${className} bg-blue-200 p-20 rounded-2xl`}>Image</div>
+  );
+};
+
