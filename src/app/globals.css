@@ -9,6 +9,8 @@
 @theme {
   --color-textPrimary: #ffffe3;
   --color-bgPrimary: #10100e;
+  --color-tipsyDark: #191919;
+  --color-textGrey: #676767;
 }
 
 @media (prefers-color-scheme: dark) {
