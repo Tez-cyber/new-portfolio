@@ -1,4 +1,5 @@
 "use client";
+import { FlipLink } from "@/components/RevealLinks";
 import localFont from "next/font/local";
 import Image from "next/image";
 
@@ -28,20 +29,28 @@ export default function Home() {
             <div className="bg-[#191919] rounded-2xl p-10">
               <div className="flex gap-3 items-center text-3xl">
                 <span>Hello I'm Azeez </span>
-                <span className="w-5 h-[2px] block bg-textPrimary" />
+                <span className="w-5 h-[2px] hidden bg-textPrimary md:block" />
               </div>
-              <span className="text-[#676767] text-lg text pt-5 block">
+              <span className="text-[#676767] block text-lg text pt-5 md:flex">
                 Lead developer at{" "}
                 <a
-                  className="underline transition-all duration-300 ease-in-out hover:text-white"
+                  className="underline transition-all duration-300 ease-in-out hover:text-white md:hidden"
                   target="_blank"
                   href="https://ns-express.netlify.app/"
                 >
-                  Nsexpress
+                  Nsexpress,
                 </a>
-                , <br />
-                based in Nigeria
+                {/* For mobile */}
+                <span className="pl-2 md:hidden">based in Nigeria</span>
+                <FlipLink
+                  href="/your-link-here"
+                  className="hidden md:block -translate-x-3 hover:text-white relative after:content-[''] after:absolute after:bottom-0 after:left-[15px] after:h-[2px] after:w-[89px] after:bg-[#676767] after:transition-all after:duration-300"
+                >
+                  Nsexpress
+                </FlipLink>
+                {/* based in Nigeria */}
               </span>
+              <span className="text-[#676767] text-lg hidden md:block">based in Nigeria</span>
             </div>
             {/* Second */}
             {/* Display for md devices */}
