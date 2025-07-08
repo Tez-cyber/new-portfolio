@@ -1,7 +1,7 @@
 "use client";
 import localFont from "next/font/local";
-import Link from "next/link";
-import noise from "./noise.gif"
+import Image from "next/image";
+
 // import { FlipLink } from "@/components/RevealLinks";
 
 const switzer = localFont({
@@ -31,14 +31,22 @@ export default function Home() {
                 <span className="w-5 h-[2px] block bg-textPrimary" />
               </div>
               <span className="text-[#676767] text-lg text pt-5 block">
-                Lead developer at <a className="underline transition-all duration-300 ease-in-out hover:text-white" target="_blank" href="https://ns-express.netlify.app/">Nsexpress</a>, <br />
+                Lead developer at{" "}
+                <a
+                  className="underline transition-all duration-300 ease-in-out hover:text-white"
+                  target="_blank"
+                  href="https://ns-express.netlify.app/"
+                >
+                  Nsexpress
+                </a>
+                , <br />
                 based in Nigeria
               </span>
             </div>
             {/* Second */}
             {/* Display for md devices */}
             <div className="hidden md:grid gap-4 md:grid-cols-[30%_68%] lg:hidden">
-              <Image className="" />
+              <ProfileImage className="" />
               <About />
             </div>
             <div className="bg-red-200 p-20 rounded-2xl lg:block">stack</div>
@@ -54,7 +62,7 @@ export default function Home() {
           {/* Parent for bottom grid ==== large screen */}
           <div className="lg:h-[250px] rounded-xl gap-4 hidden lg:grid lg:grid-cols-[24%_48%_24%]">
             {/* First */}
-            <Image />
+            <ProfileImage />
             {/* Second */}
             <About />
             {/* Third */}
@@ -84,15 +92,23 @@ const Socials = ({ className }: GeneralProps) => {
   );
 };
 
-const Image = ({ className }: GeneralProps) => {
+const ProfileImage = ({ className }: GeneralProps) => {
   return (
-    <div className={`${className} bg-blue-200 p-20 rounded-2xl`}>Image</div>
+    <div className={`${className} rounded-2xl`}>
+      <Image
+        src="/port.png"
+        alt="Main portfolio image"
+        width={1200}
+        height={800}
+        className="w-full h-full object-cover rounded-3xl"
+        priority
+      />
+    </div>
   );
 };
 
 const About = ({ className }: GeneralProps) => {
   return (
-    <div className={`${className} bg-blue-200 p-20 rounded-2xl`}>Image</div>
+    <div className={`${className} bg-blue-200 p-20 rounded-2xl`}>About</div>
   );
 };
-
