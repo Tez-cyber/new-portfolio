@@ -56,8 +56,8 @@ export default function Home() {
             </div>
             {/* Second */}
             {/* Display for md devices */}
-            <div className="hidden md:grid gap-4 md:grid-cols-[30%_68%] lg:hidden">
-              <ProfileImage className="" />
+            <div className="md:grid gap-4 md:grid-cols-[30%_68%] lg:hidden">
+              <ProfileImage className="hidden md:block" />
               <About />
             </div>
             <div className="bg-red-200 p-20 rounded-2xl lg:block">stack</div>
@@ -122,7 +122,7 @@ const About = ({ className }: GeneralProps) => {
   return (
     <div className={`${className} bg-tipsyDark p-10 rounded-2xl`}>
       <span className="uppercase text-textGrey tracking-widest">about</span>
-      <p className="pt-5 text-xl font-semibold text-textPrimary/80">
+      <p className="pt-5 text-lg font-semibold text-textPrimary/80 md:text-xl">
         Turning ideas into functional, beautiful systems—one line of code at a
         time.{" "}
       </p>
