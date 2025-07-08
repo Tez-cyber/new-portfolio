@@ -57,3 +57,15 @@ export default function Home() {
     </section>
   );
 }
+
+
+const Contact = () => {
+  return (
+    <></>
+  )
+}
+const Socials = () => {
+  return (
+    <></>
+  )
+}
