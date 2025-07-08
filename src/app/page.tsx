@@ -16,58 +16,31 @@ const switzer = localFont({
 
 export default function Home() {
   return (
-    <section className="bg-bgPrimary text-textPrimary w-screen z-30 flex flex-col items-center justify-center min-h-screen">
-      {/* heading */}
-      <h2
-        style={{
-          fontVariationSettings: '"wght" 900, "ital" 1',
-          fontFamily: `var(${switzer.variable})`,
-          fontSize: "clamp(48px, 8vw, 110px)",
-          lineHeight: 1,
-        }}
-        className="flex text-center items-baseline gap-2 pt-5 md:pt-0 md:pl-7"
-      >
-        <i>FRONTEND DEVELOPER</i>
-        {/* fullstop */}
-        <span
-          className="bg-textPrimary rounded-full hidden md:block"
-          style={{
-            width: "clamp(12px, 1.5vw, 16px)",
-            height: "clamp(12px, 1.5vw, 16px)",
-            display: "inline-block",
-            verticalAlign: "middle",
-          }}
-        />
-      </h2>
-
-      {/* Bottom section  */}
-      <div className="flex flex-col px-10 py-20 justify-between items-center lg:flex-row md:py-6 w-full">
-        <div className="lg:w-[50%]">
-          <video src="/port.mp4" autoPlay muted playsInline loop />
-        </div>
-        <div className="text-gray-400 leading-[1.7] text-xl pt-10 lg:w-[50%] md:pl-10">
-          <p>
-            I&apos;m{" "}
-            <span className="text-[#ffffe3] font-bold">Salami Azeez</span>, a
-            passionate frontend developer specializing in building responsive,
-            performant, and accessible web applications.
-          </p>
-          {/* call to action */}
-          <div className="mt-5 flex items-center justify-center gap-4 md:justify-start">
-            <span className="rounded-3xl border-[1.5px] border-solid border-textPrimary px-4 p-3">
-              <FlipLink href="/portfolio" className="text-base text-textPrimary">
-                See my projects
-              </FlipLink>
-            </span>
-            <span
-              className="text-base relative inline-block before:content-[''] before:absolute before:w-0 
-          before:h-[1.5px] before:bg-textPrimary before:bottom-0 before:left-0 before:mt-2 hover:before:w-full 
-          before:transition-all before:duration-300"
-            >
-              <Link href="/about">Know me</Link>
-            </span>
+    <section className="bg-[#0d0d0d] text-black w-screen min-h-screen p-5">
+      <div className="grid gap-4 h-full grid-cols-[70%_28.5%] border-[2px] border-solid border-textPrimary/30 p-4 rounded-3xl">
+        {/* First grid */}
+        <div className="rounded-xl flex gap-4 flex-col">
+          {/* Parent grid for top section */}
+          <div className="rounded-xl h-[205px] grid gap-4 grid-cols-[48%_24%_24%]">
+            {/* First */}
+            <div className="bg-green-200 p-20 rounded-2xl">Intro</div>
+            {/* Second */}
+            <div className="bg-red-200 p-20 rounded-2xl">stack</div>
+            {/* Third */}
+            <div className="bg-blue-200 p-20 rounded-2xl">contact</div>
+          </div>
+          {/* Parent for bottom grid */}
+          <div className="h-[250px] rounded-xl gap-4 grid grid-cols-[24%_48%_24%]">
+            {/* First */}
+            <div className="bg-green-200 p-20 rounded-2xl">Image</div>
+            {/* Second */}
+            <div className="bg-red-200 p-20 rounded-2xl">About</div>
+            {/* Third */}
+            <div className="bg-blue-200 p-20 rounded-2xl">socials</div>
           </div>
         </div>
+        {/* Second grid */}
+        <div className="bg-blue-200 p-20 rounded-2xl">Portfolio</div>
       </div>
     </section>
   );
