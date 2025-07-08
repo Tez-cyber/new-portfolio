@@ -1,5 +1,6 @@
 "use client";
 import { FlipLink } from "@/components/RevealLinks";
+import { mailtoLink } from "@/lib/constants";
 import localFont from "next/font/local";
 import Image from "next/image";
 
@@ -97,7 +98,7 @@ const Contact = ({ className }: GeneralProps) => {
         in mind ?
       </span>
       <div className=" bottom-[10px] left-[5px] absolute">
-        <FlipLink href="" className="text-4xl font-semibold md:block">
+        <FlipLink href={mailtoLink} className="text-4xl font-semibold md:block">
           Contact
         </FlipLink>
         {/* <a href="" className="text-3xl font-semibold md:hidden">Contact</a> */}

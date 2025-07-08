@@ -1,29 +1,8 @@
+import { mailtoLink } from "@/lib/constants";
 import { FlipLink } from "./RevealLinks";
 
 export const Contact = () => {
-  //  Mail
-  const email = "salamitopezeez@gmail.com";
-  const subject = "Interest in Collaboration - [Your Project]";
-  const body = `Hello, I'm [Your Name],
-
-        I saw your portfolio and wanted to discuss a potential project.
-
-        Here's what I need:
-        - [Brief description]
-        - Timeline: [When needed]
-        - Budget: [Range]
-
-        Let me know if you're available for a chat!
-
-        Best,
-        [Your Name]
-        [Your Email]
-        `;
-
-  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-    subject
-  )}&body=${encodeURIComponent(body)}`;
-
+  
   return (
     <section className="relative h-screen flex items-center justify-center w-screen bg-white text-black p-20">
       {/* top left */}
