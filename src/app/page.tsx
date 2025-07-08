@@ -3,8 +3,6 @@ import { FlipLink } from "@/components/RevealLinks";
 import localFont from "next/font/local";
 import Image from "next/image";
 
-// import { FlipLink } from "@/components/RevealLinks";
-
 const switzer = localFont({
   src: [
     {
@@ -93,7 +91,18 @@ interface GeneralProps {
 }
 const Contact = ({ className }: GeneralProps) => {
   return (
-    <div className={`${className} bg-blue-200 p-20 rounded-2xl`}>Contact</div>
+    <div className={`${className} relative h-[150px] bg-textPrimary text-bgPrimary p-5 rounded-2xl md:h-auto`}>
+      <span className="text-sm block leading-[1.3]">
+        Have a project <br />
+        in mind ?
+      </span>
+      <div className=" bottom-[10px] left-[5px] absolute">
+        <FlipLink href="" className="text-4xl font-semibold md:block">
+          Contact
+        </FlipLink>
+        {/* <a href="" className="text-3xl font-semibold md:hidden">Contact</a> */}
+      </div>
+    </div>
   );
 };
 
