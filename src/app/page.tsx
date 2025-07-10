@@ -3,9 +3,8 @@ import { FlipLink } from "@/components/RevealLinks";
 import { mailtoLink } from "@/lib/constants";
 import Image from "next/image";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
 import { TfiEmail } from "react-icons/tfi";
-
 
 export default function Home() {
   return (
@@ -51,7 +50,9 @@ export default function Home() {
               <ProfileImage className="hidden md:block" />
               <About />
             </div>
-            <div className="bg-red-200 p-20 rounded-2xl md:hidden lg:block">stack</div>
+            <div className="bg-red-200 p-20 rounded-2xl md:hidden lg:block">
+              stack
+            </div>
             {/* Third */}
             {/* Display for medium */}
             <div className="hidden md:grid lg:hidden grid-cols-[49%_49%] gap-4 ">
@@ -72,7 +73,41 @@ export default function Home() {
           </div>
         </div>
         {/* Second grid */}
-        <div className="bg-blue-200 p-20 rounded-2xl">Portfolio</div>
+        <div className="bg-tipsyDark text-textPrimary px-10 py-5 rounded-2xl">
+          <div className="">
+            <a href="" className="flex items-center justify-between">
+              <p>Nsexpress</p>
+              <FaArrowRightLong />
+            </a>
+            <div className="mt-5">
+              <video src="/port.mp4" className="rounded-xl" autoPlay muted playsInline loop />
+            </div>
+          </div>
+          {/* Turftriibe */}
+          <span className="mt-5 rounded-2xl w-full h-[1px] bg-textPrimary block" />
+          <div className="my-5">
+            <a href="" className="flex items-center justify-between">
+              <p>Turftriibe</p>
+              <FaArrowRightLong />
+            </a>
+          </div>
+          {/* Inks and pixels */}
+          <span className="mt-5 rounded-2xl w-full h-[1px] bg-textPrimary block" />
+          <div className="my-5">
+            <a href="" className="flex items-center justify-between">
+              <p>Inks and pixels</p>
+              <FaArrowRightLong />
+            </a>
+          </div>
+          {/* See more projects */}
+          <div className="flex justify-center">
+            <span className="rounded-3xl border-[1.5px] border-solid border-textPrimary px-4 p-3 hover:bg-textPrimary hover:text-tipsyDark duration-300 transition-all ease-in-out">
+              <FlipLink href="/portfolio" className="text-base">
+                See my projects
+              </FlipLink>
+            </span>
+          </div>
+        </div>
         <Socials className="lg:hidden" />
       </div>
     </section>
@@ -102,7 +137,8 @@ const Contact = ({ className }: GeneralProps) => {
 };
 
 const Socials = ({ className }: GeneralProps) => {
-  const iconWrapper = "border-[1.5px] transition-all duration-300 ease-in-out border-solid border-textPrimary rounded-md p-3";
+  const iconWrapper =
+    "border-[1.5px] transition-all duration-300 ease-in-out border-solid border-textPrimary rounded-md p-3";
   return (
     <div
       className={`${className} bg-tipsyDark flex gap-5 lg:gap-0 lg:flex-col items-center justify-center rounded-2xl`}
@@ -115,7 +151,11 @@ const Socials = ({ className }: GeneralProps) => {
           </a>
         </span>
         <span className={`${iconWrapper} hover:bg-[#ff3131]`}>
-          <a target="_blank" href="https://www.instagram.com/tez_cyber/" className="">
+          <a
+            target="_blank"
+            href="https://www.instagram.com/tez_cyber/"
+            className=""
+          >
             <FaInstagram className="text-2xl" />
           </a>
         </span>
@@ -123,7 +163,11 @@ const Socials = ({ className }: GeneralProps) => {
       {/* second section */}
       <div className="flex gap-5 my-2">
         <span className={`${iconWrapper} hover:bg-[#0a66c2]`}>
-          <a target="_blank" href="https://www.linkedin.com/in/azeezsalami/" className="">
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/azeezsalami/"
+            className=""
+          >
             <FaLinkedin className="text-2xl" />
           </a>
         </span>
