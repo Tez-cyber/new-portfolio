@@ -1,22 +1,11 @@
 "use client";
 import { FlipLink } from "@/components/RevealLinks";
 import { mailtoLink } from "@/lib/constants";
-import localFont from "next/font/local";
 import Image from "next/image";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { TfiEmail } from "react-icons/tfi";
 
-const switzer = localFont({
-  src: [
-    {
-      path: "./fonts/switzer/fonts/Switzer-BlackItalic.woff2",
-      weight: "100 900",
-      style: "italic",
-    },
-  ],
-  variable: "--font-blackItalic",
-});
 
 export default function Home() {
   return (
@@ -116,17 +105,17 @@ const Socials = ({ className }: GeneralProps) => {
   const iconWrapper = "border-[1.5px] transition-all duration-300 ease-in-out border-solid border-textPrimary rounded-md p-3";
   return (
     <div
-      className={`${className} bg-tipsyDark flex flex-col items-center justify-center rounded-2xl`}
+      className={`${className} bg-tipsyDark flex gap-5 lg:gap-0 lg:flex-col items-center justify-center rounded-2xl`}
     >
       {/* First section */}
       <div className="flex gap-5 my-2">
         <span className={`${iconWrapper} hover:bg-[#4d6afb]`}>
-          <a href="" className="">
+          <a target="_blank" href="https://x.com/tezcyber" className="">
             <FaXTwitter className="text-2xl" />
           </a>
         </span>
         <span className={`${iconWrapper} hover:bg-[#ff3131]`}>
-          <a href="" className="">
+          <a target="_blank" href="https://www.instagram.com/tez_cyber/" className="">
             <FaInstagram className="text-2xl" />
           </a>
         </span>
@@ -134,12 +123,12 @@ const Socials = ({ className }: GeneralProps) => {
       {/* second section */}
       <div className="flex gap-5 my-2">
         <span className={`${iconWrapper} hover:bg-[#0a66c2]`}>
-          <a href="" className="">
+          <a target="_blank" href="https://www.linkedin.com/in/azeezsalami/" className="">
             <FaLinkedin className="text-2xl" />
           </a>
         </span>
         <span className={`${iconWrapper} hover:bg-[#0fc145]`}>
-          <a href="" className="">
+          <a target="_blank" href={mailtoLink} className="">
             <TfiEmail className="text-2xl" />
           </a>
         </span>
