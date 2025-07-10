@@ -4,6 +4,7 @@ import { mailtoLink } from "@/lib/constants";
 import Image from "next/image";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
+import { MdOutlineContentCopy } from "react-icons/md";
 import { TfiEmail } from "react-icons/tfi";
 
 export default function Home() {
@@ -80,7 +81,14 @@ export default function Home() {
               <FaArrowRightLong />
             </a>
             <div className="mt-5">
-              <video src="/port.mp4" className="rounded-xl" autoPlay muted playsInline loop />
+              <video
+                src="/port.mp4"
+                className="rounded-xl"
+                autoPlay
+                muted
+                playsInline
+                loop
+              />
             </div>
           </div>
           {/* Turftriibe */}
@@ -122,10 +130,13 @@ const Contact = ({ className }: GeneralProps) => {
     <div
       className={`${className} relative h-[150px] bg-textPrimary text-bgPrimary p-5 rounded-2xl md:h-auto`}
     >
-      <span className="text-sm block leading-[1.3]">
-        Have a project <br />
-        in mind ?
-      </span>
+      <div className="flex items-center justify-between">
+        <span className="text-sm block leading-[1.3]">
+          Have a project <br />
+          in mind ?
+        </span>
+        <MdOutlineContentCopy className="text-xl" />
+      </div>
       <div className=" bottom-[10px] left-[5px] absolute">
         <FlipLink href={mailtoLink} className="text-4xl font-semibold md:block">
           Contact
