@@ -2,6 +2,7 @@
 import { FlipLink } from "@/components/RevealLinks";
 import { mailtoLink } from "@/lib/constants";
 import Image from "next/image";
+import { useState } from "react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
 import { MdOutlineContentCopy } from "react-icons/md";
@@ -126,6 +127,15 @@ interface GeneralProps {
   className?: string;
 }
 const Contact = ({ className }: GeneralProps) => {
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("salamitopeazeez@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div
       className={`${className} relative h-[150px] bg-textPrimary text-bgPrimary p-5 rounded-2xl md:h-auto`}
@@ -135,7 +145,22 @@ const Contact = ({ className }: GeneralProps) => {
           Have a project <br />
           in mind ?
         </span>
-        <MdOutlineContentCopy className="text-xl" />
+        <button
+          className="relative p-1 cursor-pointer rounded transition-colors"
+          onClick={handleCopy}
+          onMouseEnter={() => setShowTooltip(true)}
+          onMouseLeave={() => setShowTooltip(false)}
+          aria-label="Copy text"
+        >
+          <MdOutlineContentCopy className="text-xl" />
+
+          {/* Tooltip */}
+          {showTooltip && (
+            <div className="absolute -top-8 right-0 bg-black/60 text-white text-md px-3 py-2 rounded whitespace-nowrap">
+              {copied ? "Copied!" : "Click to copy"}
+            </div>
+          )}
+        </button>
       </div>
       <div className=" bottom-[10px] left-[5px] absolute">
         <FlipLink href={mailtoLink} className="text-4xl font-semibold md:block">
