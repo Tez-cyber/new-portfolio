@@ -52,13 +52,11 @@ export default function Home() {
               <ProfileImage className="hidden md:block" />
               <About />
             </div>
-            <div className="bg-red-200 p-20 rounded-2xl md:hidden lg:block">
-              stack
-            </div>
+            <Stack className="md:hidden lg:block" />
             {/* Third */}
             {/* Display for medium */}
             <div className="hidden md:grid lg:hidden grid-cols-[49%_49%] gap-4 ">
-              <div className="bg-red-200 p-20 rounded-2xl">stack</div>
+              <Stack />
               <Contact />
             </div>
             {/* Display for large and small */}
@@ -243,3 +241,13 @@ const About = ({ className }: GeneralProps) => {
     </div>
   );
 };
+
+const Stack = ({ className }: GeneralProps) => {
+  return (
+    <div className={`${className} bg-tipsyDark p-10 rounded-2xl`}>
+      stack
+    </div>
+  );
+};
+
+
