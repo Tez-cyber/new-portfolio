@@ -3,6 +3,9 @@ import { FlipLink } from "@/components/RevealLinks";
 import { mailtoLink } from "@/lib/constants";
 import localFont from "next/font/local";
 import Image from "next/image";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { TfiEmail } from "react-icons/tfi";
 
 const switzer = localFont({
   src: [
@@ -59,7 +62,7 @@ export default function Home() {
               <ProfileImage className="hidden md:block" />
               <About />
             </div>
-            <div className="bg-red-200 p-20 rounded-2xl lg:block">stack</div>
+            <div className="bg-red-200 p-20 rounded-2xl md:hidden lg:block">stack</div>
             {/* Third */}
             {/* Display for medium */}
             <div className="hidden md:grid lg:hidden grid-cols-[49%_49%] gap-4 ">
@@ -92,7 +95,9 @@ interface GeneralProps {
 }
 const Contact = ({ className }: GeneralProps) => {
   return (
-    <div className={`${className} relative h-[150px] bg-textPrimary text-bgPrimary p-5 rounded-2xl md:h-auto`}>
+    <div
+      className={`${className} relative h-[150px] bg-textPrimary text-bgPrimary p-5 rounded-2xl md:h-auto`}
+    >
       <span className="text-sm block leading-[1.3]">
         Have a project <br />
         in mind ?
@@ -108,8 +113,38 @@ const Contact = ({ className }: GeneralProps) => {
 };
 
 const Socials = ({ className }: GeneralProps) => {
+  const iconWrapper = "border-[1.5px] transition-all duration-300 ease-in-out border-solid border-textPrimary rounded-md p-3";
   return (
-    <div className={`${className} bg-blue-200 p-20 rounded-2xl`}>socials</div>
+    <div
+      className={`${className} bg-tipsyDark flex flex-col items-center justify-center rounded-2xl`}
+    >
+      {/* First section */}
+      <div className="flex gap-5 my-2">
+        <span className={`${iconWrapper} hover:bg-[#4d6afb]`}>
+          <a href="" className="">
+            <FaXTwitter className="text-2xl" />
+          </a>
+        </span>
+        <span className={`${iconWrapper} hover:bg-[#ff3131]`}>
+          <a href="" className="">
+            <FaInstagram className="text-2xl" />
+          </a>
+        </span>
+      </div>
+      {/* second section */}
+      <div className="flex gap-5 my-2">
+        <span className={`${iconWrapper} hover:bg-[#0a66c2]`}>
+          <a href="" className="">
+            <FaLinkedin className="text-2xl" />
+          </a>
+        </span>
+        <span className={`${iconWrapper} hover:bg-[#0fc145]`}>
+          <a href="" className="">
+            <TfiEmail className="text-2xl" />
+          </a>
+        </span>
+      </div>
+    </div>
   );
 };
 
