@@ -10,7 +10,7 @@ import { TfiEmail } from "react-icons/tfi";
 
 export default function Home() {
   return (
-    <section className="bg-[#0d0d0d] text-textPrimary w-full md:w-screen min-h-screen p-5">
+    <section className="bg-[#0d0d0d] text-textPrimary w-full md:w-screen min-h-screen p-5 flex flex-col items-center justify-center">
       <div className="noise"></div>
       <div className="grid gap-4 h-full lg:grid-cols-[70%_28.5%] border-[2px] border-solid border-textPrimary/30 p-4 rounded-3xl">
         {/* First grid */}
