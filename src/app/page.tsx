@@ -20,7 +20,7 @@ export default function Home() {
             {/*  ==== First ============================== */}
             <div className="bg-tipsyDark rounded-2xl p-10">
               <div className="flex gap-3 items-center text-3xl">
-                <span>Hello I'm Azeez </span>
+                <span>Hello I&apos;m Azeez </span>
                 <span className="w-5 h-[2px] hidden bg-textPrimary md:block" />
               </div>
               <span className="text-textGrey block text-lg text pt-5 md:flex">
@@ -244,12 +244,12 @@ const About = ({ className }: GeneralProps) => {
   );
 };
 
-const Stack = ({ className }: GeneralProps) => {
-  return (
-    <div className={`${className} bg-tipsyDark p-10 rounded-2xl`}>
-      <span>Stack i use</span>
-    </div>
-  );
-};
+// const Stack = ({ className }: GeneralProps) => {
+//   return (
+//     <div className={`${className} bg-tipsyDark p-10 rounded-2xl`}>
+//       <span>Stack i use</span>
+//     </div>
+//   );
+// };
 
 
