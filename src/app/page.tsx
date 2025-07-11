@@ -16,8 +16,8 @@ export default function Home() {
         {/* First grid */}
         <div className="rounded-xl flex gap-4 flex-col">
           {/* Parent grid for top section */}
-          <div className="rounded-xl lg:h-[205px] grid gap-4 lg:grid-cols-[48%_24%_24%]">
-            {/* First */}
+          <div className="rounded-xl lg:h-[205px] grid gap-4 lg:grid-cols-[48%_48%]">
+            {/*  ==== First ============================== */}
             <div className="bg-tipsyDark rounded-2xl p-10">
               <div className="flex gap-3 items-center text-3xl">
                 <span>Hello I'm Azeez </span>
@@ -46,17 +46,17 @@ export default function Home() {
                 based in Nigeria
               </span>
             </div>
-            {/* Second */}
+            {/* ==== Second ============================== */}
             {/* Display for md devices */}
             <div className="md:grid gap-4 md:grid-cols-[30%_68%] lg:hidden">
               <ProfileImage className="hidden md:block" />
               <About />
             </div>
-            <Stack className="md:hidden lg:block" />
+            {/* <Stack className="md:hidden lg:block" /> */}
             {/* Third */}
             {/* Display for medium */}
-            <div className="hidden md:grid lg:hidden grid-cols-[49%_49%] gap-4 ">
-              <Stack />
+            <div className="hidden md:block h-[200px] lg:hidden gap-4 ">
+              {/* <Stack /> */}
               <Contact />
             </div>
             {/* Display for large and small */}
@@ -136,7 +136,7 @@ const Contact = ({ className }: GeneralProps) => {
 
   return (
     <div
-      className={`${className} relative h-[150px] bg-textPrimary text-bgPrimary p-5 rounded-2xl md:h-auto`}
+      className={`${className} relative h-[150px] bg-textPrimary text-bgPrimary p-5 rounded-2xl lg:h-auto`}
     >
       <div className="flex items-center justify-between">
         <span className="text-sm block leading-[1.3]">
@@ -245,7 +245,7 @@ const About = ({ className }: GeneralProps) => {
 const Stack = ({ className }: GeneralProps) => {
   return (
     <div className={`${className} bg-tipsyDark p-10 rounded-2xl`}>
-      stack
+      <span>Stack i use</span>
     </div>
   );
 };
