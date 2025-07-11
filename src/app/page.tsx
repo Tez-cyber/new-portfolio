@@ -73,11 +73,13 @@ export default function Home() {
           </div>
         </div>
         {/* Second grid */}
+        {/* ==== Portfolio section ==== */}
         <div className="bg-tipsyDark text-textPrimary px-10 py-5 rounded-2xl">
+          {/* Nsexpress */}
           <div className="">
-            <a href="" className="flex items-center justify-between">
+            <a href="" className="flex items-center justify-between group">
               <p>Nsexpress</p>
-              <FaArrowRightLong />
+              <FaArrowRightLong className="group-hover:rotate-0 -rotate-45 transition-all duration-200 ease-in" />
             </a>
             <div className="mt-5">
               <video
@@ -93,22 +95,22 @@ export default function Home() {
           {/* Turftriibe */}
           <span className="mt-5 rounded-2xl w-full h-[1px] bg-textPrimary block" />
           <div className="my-5">
-            <a href="" className="flex items-center justify-between">
+            <a href="" className="flex items-center justify-between group">
               <p>Turftriibe</p>
-              <FaArrowRightLong />
+              <FaArrowRightLong className="group-hover:-rotate-45 transition-all duration-200 ease-in" />
             </a>
           </div>
           {/* Inks and pixels */}
           <span className="mt-5 rounded-2xl w-full h-[1px] bg-textPrimary block" />
           <div className="my-5">
-            <a href="" className="flex items-center justify-between">
+            <a href="" className="flex items-center justify-between group">
               <p>Inks and pixels</p>
-              <FaArrowRightLong />
+              <FaArrowRightLong className="group-hover:-rotate-45 transition-all duration-200 ease-in" />
             </a>
           </div>
           {/* See more projects */}
           <div className="flex justify-center">
-            <span className="rounded-3xl border-[1.5px] border-solid border-textPrimary px-4 p-3 hover:bg-textPrimary hover:text-tipsyDark duration-300 transition-all ease-in-out">
+            <span className="rounded-3xl border-[1.5px] border-solid border-textGrey px-4 p-3 hover:bg-textPrimary hover:text-tipsyDark duration-300 transition-all ease-in-out">
               <FlipLink href="/portfolio" className="text-base">
                 See my projects
               </FlipLink>
