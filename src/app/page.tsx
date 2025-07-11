@@ -77,7 +77,7 @@ export default function Home() {
         <div className="bg-tipsyDark text-textPrimary px-10 py-5 rounded-2xl">
           {/* Nsexpress */}
           <div className="">
-            <a href="" className="flex items-center justify-between group">
+            <a href="https://ns-express.netlify.app/" className="flex items-center justify-between group">
               <p>Nsexpress</p>
               <FaArrowRightLong className="group-hover:rotate-0 -rotate-45 transition-all duration-200 ease-in" />
             </a>
@@ -95,7 +95,7 @@ export default function Home() {
           {/* Turftriibe */}
           <span className="mt-5 rounded-2xl w-full h-[1px] bg-textPrimary block" />
           <div className="my-5">
-            <a href="" className="flex items-center justify-between group">
+            <a href="https://www.turftriibe.com/" className="flex items-center justify-between group">
               <p>Turftriibe</p>
               <FaArrowRightLong className="group-hover:-rotate-45 transition-all duration-200 ease-in" />
             </a>
@@ -103,7 +103,7 @@ export default function Home() {
           {/* Inks and pixels */}
           <span className="mt-5 rounded-2xl w-full h-[1px] bg-textPrimary block" />
           <div className="my-5">
-            <a href="" className="flex items-center justify-between group">
+            <a href="https://inks-pixels.vercel.app/" className="flex items-center justify-between group">
               <p>Inks and pixels</p>
               <FaArrowRightLong className="group-hover:-rotate-45 transition-all duration-200 ease-in" />
             </a>
