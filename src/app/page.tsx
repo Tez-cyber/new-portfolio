@@ -2,6 +2,7 @@
 import { FlipLink } from "@/components/RevealLinks";
 import { mailtoLink } from "@/lib/constants";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
@@ -234,13 +235,16 @@ const ProfileImage = ({ className }: GeneralProps) => {
 
 const About = ({ className }: GeneralProps) => {
   return (
-    <div className={`${className} bg-tipsyDark p-10 rounded-2xl`}>
+    <Link href="/about" className={`${className} relative bg-tipsyDark p-10 rounded-2xl group`}>
       <span className="uppercase text-textGrey tracking-widest">about</span>
       <p className="pt-5 text-lg font-semibold text-textPrimary/80 md:text-xl">
         Turning ideas into functional, beautiful systems—one line of code at a
         time.{" "}
       </p>
-    </div>
+      <i className="absolute bottom-[20px] right-[35px] border-[2px] border-solid border-textGrey rounded-full p-3">
+        <FaArrowRightLong className="group-hover:rotate-0 -rotate-45 transition-all duration-200 ease-in" />
+      </i>
+    </Link>
   );
 };
 
