@@ -53,6 +53,7 @@ export default function About() {
     { scope: containerRef }
   );
 
+
   // Memoized mouse move handler for both mouse and touch
   const handlePointerMove = useCallback((e: MouseEvent | TouchEvent) => {
     if (!overlayRef.current) return;
@@ -254,7 +255,18 @@ export default function About() {
                 <div
                   ref={wavesRef}
                   className="absolute inset-0 pointer-events-none"
-                />
+                >
+                  {[...Array(3)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="wave-circle"
+                      style={{
+                        // animationDelay: `${i * 2}s`,
+                        borderColor: "black",
+                      }}
+                    />
+                  ))}
+                </div>
                 {/* Button */}
                 <span
                   ref={buttonRef}
