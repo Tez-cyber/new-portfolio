@@ -30,25 +30,28 @@ export default function About() {
   const [isOpen, setIsOpen] = useState(false);
   const [display, setDisplay] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const wavesRef = useRef<HTMLDivElement>(null);
 
-  
-  useGSAP(() => {
-    if (containerRef.current) {
-      // Initial state
-      gsap.set(containerRef.current, {
-        y: 100,
-        opacity: 0,
-      });
-      
-      // Animate in
-      gsap.to(containerRef.current, {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power3.out",
-      });
-    }
-  }, { scope: containerRef });
+  useGSAP(
+    () => {
+      if (containerRef.current) {
+        // Initial state
+        gsap.set(containerRef.current, {
+          y: 100,
+          opacity: 0,
+        });
+
+        // Animate in
+        gsap.to(containerRef.current, {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+        });
+      }
+    },
+    { scope: containerRef }
+  );
 
   // Memoized mouse move handler for both mouse and touch
   const handlePointerMove = useCallback((e: MouseEvent | TouchEvent) => {
@@ -80,7 +83,6 @@ export default function About() {
   const handleScrollDown = useCallback(() => {
     setDisplay(true);
 
-  
     setTimeout(() => {
       if (!nextSectionRef.current) return;
       gsap.to(window, {
@@ -247,12 +249,20 @@ export default function About() {
                 about <br />
                 me
               </h1>
-              <span
-                ref={buttonRef}
-                className="hover-btn absolute bottom-[80px] left-[80px] w-[60px] h-[60px] rounded-full bg-black flex cursor-pointer mt-8"
-              >
-                <ArrowIcon color="white" />
-              </span>
+              <div className="absolute bottom-[80px] left-[80px] w-[60px] h-[60px]">
+                {/* Waves container */}
+                <div
+                  ref={wavesRef}
+                  className="absolute inset-0 pointer-events-none"
+                />
+                {/* Button */}
+                <span
+                  ref={buttonRef}
+                  className="hover-btn absolute inset-0 w-full h-full rounded-full bg-black flex cursor-pointer"
+                >
+                  <ArrowIcon color="white" />
+                </span>
+              </div>
             </section>
 
             {/* Overlay section */}
@@ -294,7 +304,7 @@ export default function About() {
             <Contact />
           </section>
         )}
-        
+
         {/* Mobile */}
         <section className="md:hidden">
           <NextSection ref={nextSectionRef} />
