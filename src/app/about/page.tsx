@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react"; // Added useEffect
+import { useRef, useState, useCallback } from "react";
 import localFont from "next/font/local";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";

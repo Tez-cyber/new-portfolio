@@ -235,7 +235,7 @@ const ProfileImage = ({ className }: GeneralProps) => {
 
 const About = ({ className }: GeneralProps) => {
   return (
-    <Link href="/about" className={`${className} relative bg-tipsyDark p-10 rounded-2xl group`}>
+    <Link href="/about" className={`${className} relative block bg-tipsyDark p-10 rounded-2xl group`}>
       <span className="uppercase text-textGrey tracking-widest">about</span>
       <p className="pt-5 text-lg font-semibold text-textPrimary/80 md:text-xl">
         Turning ideas into functional, beautiful systems—one line of code at a
