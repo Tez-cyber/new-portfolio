@@ -28,7 +28,6 @@ export default function About() {
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
   const nextSectionRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [display, setDisplay] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const wavesRef = useRef<HTMLDivElement>(null);
 
@@ -52,7 +51,6 @@ export default function About() {
     },
     { scope: containerRef }
   );
-
 
   // Memoized mouse move handler for both mouse and touch
   const handlePointerMove = useCallback((e: MouseEvent | TouchEvent) => {
@@ -80,32 +78,6 @@ export default function About() {
     });
   }, []);
 
-  // Handle scroll to next section
-  const handleScrollDown = useCallback(() => {
-    setDisplay(true);
-
-    setTimeout(() => {
-      if (!nextSectionRef.current) return;
-      gsap.to(window, {
-        duration: 1.2,
-        ease: "power2.inOut",
-        scrollTo: {
-          y: nextSectionRef.current,
-          offsetY: 80,
-          autoKill: false,
-        },
-        onStart: () => {
-          if (scrollIndicatorRef.current) {
-            gsap.to(scrollIndicatorRef.current, {
-              opacity: 0,
-              duration: 0.3,
-            });
-          }
-        },
-      });
-    }, 50);
-  }, []);
-
   useGSAP(
     () => {
       window.addEventListener("mousemove", handlePointerMove);
@@ -128,9 +100,9 @@ export default function About() {
     )
       return;
 
-    // Button click animation
+    // Button click animation for first section and overlay
     gsap.to([buttonRef.current, toggleButtonRef.current], {
-      scale: 0.9,
+      // scale: 0.9,
       duration: 0.2,
       yoyo: true,
       repeat: 1,
@@ -159,7 +131,6 @@ export default function About() {
       });
     } else {
       // Opening animation
-      setIsOpen(true);
       gsap.to(overlayRef.current, {
         clipPath: "circle(200% at var(--x, 50%) var(--y, 50%))",
         backdropFilter: "blur(4px)",
@@ -171,7 +142,8 @@ export default function About() {
           });
         },
         onComplete: () => {
-          // Animate in the scroll indicator after overlay is fully open
+          setIsOpen(true);
+          // Animate in the scroll indicator when overlay is fully open
           if (scrollIndicatorRef.current) {
             gsap.fromTo(
               scrollIndicatorRef.current,
@@ -301,7 +273,7 @@ export default function About() {
               {/* Scroll down indicator */}
               <div
                 ref={scrollIndicatorRef}
-                onClick={handleScrollDown}
+                // onClick={handleScrollDown}
                 className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white opacity-0 cursor-pointer hover:opacity-80 transition-opacity"
               >
                 <span className="text-sm mb-2">SCROLL DOWN</span>
@@ -310,12 +282,10 @@ export default function About() {
             </section>
           </section>
         </section>
-        {display && (
-          <section className="hidden md:block">
-            <NextSection ref={nextSectionRef} />
-            <Contact />
-          </section>
-        )}
+        <section className="hidden md:block">
+          <NextSection />
+          <Contact />
+        </section>
 
         {/* Mobile */}
         <section className="md:hidden">
