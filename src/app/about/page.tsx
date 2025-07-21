@@ -28,6 +28,7 @@ export default function About() {
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
   const nextSectionRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [display, setDisplay] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const wavesRef = useRef<HTMLDivElement>(null);
 
@@ -143,6 +144,7 @@ export default function About() {
         },
         onComplete: () => {
           setIsOpen(true);
+          setDisplay(true);
           // Animate in the scroll indicator when overlay is fully open
           if (scrollIndicatorRef.current) {
             gsap.fromTo(
@@ -282,10 +284,12 @@ export default function About() {
             </section>
           </section>
         </section>
-        <section className="hidden md:block">
-          <NextSection />
-          <Contact />
-        </section>
+        {display ? (
+          <section className="hidden md:block">
+            <NextSection />
+            <Contact />
+          </section>
+        ) : null}
 
         {/* Mobile */}
         <section className="md:hidden">
