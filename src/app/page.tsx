@@ -4,7 +4,7 @@ import { mailtoLink } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
 import { MdOutlineContentCopy } from "react-icons/md";
 import { TfiEmail } from "react-icons/tfi";
@@ -187,13 +187,13 @@ const Socials = ({ className }: GeneralProps) => {
             <FaXTwitter className="text-2xl" />
           </a>
         </span>
-        <span className={`${iconWrapper} hover:bg-[#ff3131]`}>
+        <span className={`${iconWrapper} hover:bg-white hover:text-black`}>
           <a
             target="_blank"
-            href="https://www.instagram.com/tez_cyber/"
+            href="https://github.com/Tez-cyber/"
             className=""
           >
-            <FaInstagram className="text-2xl" />
+            <FaGithub className="text-2xl" />
           </a>
         </span>
       </div>
