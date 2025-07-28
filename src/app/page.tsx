@@ -4,7 +4,7 @@ import { mailtoLink } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
 import { MdOutlineContentCopy } from "react-icons/md";
 import { TfiEmail } from "react-icons/tfi";
