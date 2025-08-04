@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef, useState, useCallback, useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRef, useState, useCallback } from "react";
 import localFont from "next/font/local";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -25,8 +24,6 @@ const switzer = localFont({
   display: "swap",
 });
 export default function About() {
-  const router = useRouter();
-  const pathname = usePathname();
   const overlayRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLSpanElement>(null);
   const toggleButtonRef = useRef<HTMLSpanElement>(null);
@@ -232,7 +229,7 @@ export default function About() {
         <section className="relative w-screen hidden md:block">
           <section className="">
             {/* Background content */}
-            <section className="h-screen relative flex flex-col items-center justify-center p-[3em] bg-white text-black">
+            <section className="h-screen relative flex flex-col items-center justify-center p-[3em] text-black">
               <Link href="/">
                 <CancelIcon background="black" color="white" />
               </Link>
@@ -276,7 +273,7 @@ export default function About() {
               }}
               className="h-screen flex flex-col items-center justify-center p-[3em] bg-black text-white absolute top-0 left-0 w-full backdrop-blur-sm"
             >
-              <Link href="/">
+              <Link scroll={false} href="/">
                 <CancelIcon background="white" color="black" />
               </Link>
               <h1 style={textStyles} className={`${textDisplay} italic mt-10`}>
