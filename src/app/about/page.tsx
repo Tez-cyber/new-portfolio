@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import localFont from "next/font/local";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -8,6 +9,8 @@ import { useGSAP } from "@gsap/react";
 import { NextSection } from "@/components/nextSection/nextSection";
 import { Contact } from "@/components/contact";
 import { Navbar } from "@/components/bottomNavbar";
+import { IoCloseOutline } from "react-icons/io5";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollToPlugin);
 const switzer = localFont({
@@ -22,6 +25,8 @@ const switzer = localFont({
   display: "swap",
 });
 export default function About() {
+  const router = useRouter();
+  const pathname = usePathname();
   const overlayRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLSpanElement>(null);
   const toggleButtonRef = useRef<HTMLSpanElement>(null);
@@ -32,23 +37,15 @@ export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
   const wavesRef = useRef<HTMLDivElement>(null);
 
+  // When entering about page
   useGSAP(
     () => {
-      if (containerRef.current) {
-        // Initial state
-        gsap.set(containerRef.current, {
-          y: 100,
-          opacity: 0,
-        });
-
-        // Animate in
-        gsap.to(containerRef.current, {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power3.out",
-        });
-      }
+      if (!containerRef.current) return;
+      gsap.fromTo(
+        containerRef.current,
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+      );
     },
     { scope: containerRef }
   );
@@ -212,15 +209,34 @@ export default function About() {
     fontSize: "clamp(48px, 10vw, 200px)",
     lineHeight: 1,
   };
+
+  const CancelIcon = ({
+    background,
+    color,
+  }: {
+    background?: string;
+    color?: string;
+  }) => (
+    <IoCloseOutline
+      style={{
+        background,
+        color,
+      }}
+      className="text-5xl rounded-full"
+    />
+  );
+
   return (
     <>
-      <Navbar />
       <div ref={containerRef}>
         <section className="relative w-screen hidden md:block">
           <section className="">
             {/* Background content */}
             <section className="h-screen relative flex flex-col items-center justify-center p-[3em] bg-white text-black">
-              <h1 style={textStyles} className={`${textDisplay} italic`}>
+              <Link href="/">
+                <CancelIcon background="black" color="white" />
+              </Link>
+              <h1 style={textStyles} className={`${textDisplay} italic mt-10`}>
                 about <br />
                 me
               </h1>
@@ -260,7 +276,10 @@ export default function About() {
               }}
               className="h-screen flex flex-col items-center justify-center p-[3em] bg-black text-white absolute top-0 left-0 w-full backdrop-blur-sm"
             >
-              <h1 style={textStyles} className={`${textDisplay} italic`}>
+              <Link href="/">
+                <CancelIcon background="white" color="black" />
+              </Link>
+              <h1 style={textStyles} className={`${textDisplay} italic mt-10`}>
                 about <br />
                 me
               </h1>
@@ -286,6 +305,7 @@ export default function About() {
         </section>
         {display ? (
           <section className="hidden md:block">
+            <Navbar />
             <NextSection />
             <Contact />
           </section>
