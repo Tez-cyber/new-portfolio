@@ -34,7 +34,9 @@ export default function Home() {
                   Nsexpress,
                 </a>
                 {/* For mobile */}
-                <span className="pl-2 md:hidden">based in Nigeria</span>
+                {/* <span className="pl-2 md:hidden">based in Nigeria</span> */}
+
+                {/* Medium and large screen  */}
                 <FlipLink
                   href="/your-link-here"
                   className="hidden md:block -translate-x-3 hover:text-white relative after:content-[''] after:absolute after:bottom-0 after:left-[15px] after:h-[2px] after:w-[89px] after:bg-textGrey after:transition-all after:duration-300"
@@ -43,9 +45,9 @@ export default function Home() {
                 </FlipLink>
                 {/* based in Nigeria */}
               </span>
-              <span className="text-textGrey text-lg hidden md:block">
+              {/* <span className="text-textGrey text-lg hidden md:block">
                 based in Nigeria
-              </span>
+              </span> */}
             </div>
             {/* ==== Second ============================== */}
             {/* Display for md devices */}
