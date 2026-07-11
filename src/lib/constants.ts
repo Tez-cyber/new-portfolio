@@ -1,21 +1,36 @@
 export const projectDesc = [
   [`IT and Branding Agency`],
   [`TurfTriibe is a platform that connects sports enthusiasts`],
-  [`Matthias Pliessing is a renowned artist and designer`],
+  [`Multi-Tenant AI-Powered School Assistant`],
+  [`Onchain Auction Platform`],
+  [`Platform where health meets personalized care. `],
+  [`Portfolio for a Visual Designer`],
   [`QuickPayex is a cutting-edge giftcard payment processing solution`],
-  [`Inks & Pixels - Printing agency`],
-  [`HRLead - Managerial Optimization for companies`],
-  [`Amfaj - Exceptional AgriculturalCommodities`],
+  // [`Inks & Pixels - Printing agency`],
+  // [`HRLead - Managerial Optimization for companies`],
+  // [`Amfaj - Exceptional AgriculturalCommodities`],
 ];
 
 export const projectTitles = [
   {
     title: "Nsexpress",
-    link: "https://ns-express.netlify.app/",
+    link: "https://nsdigitals.com.ng/",
   },
   {
     title: "Turftriibe",
     link: "https://www.turftriibe.com/",
+  },
+  {
+    title: "Edusmartix",
+    link: "https://edusmartix.com/",
+  },
+  {
+    title: "Aurabid",
+    link: "https://aura-auction-sigma.vercel.app/",
+  },
+  {
+    title: "MedicDiet",
+    link: "https://medicdiet-ecru.vercel.app/",
   },
   {
     title: "Matthias Pliessing",
@@ -25,18 +40,18 @@ export const projectTitles = [
     title: "QuickPayex",
     link: "https://www.quickpayex.com/",
   },
-  {
-    title: "Inks & Pixels",
-    link: "https://inks-pixels.vercel.app/",
-  },
-  {
-    title: "HrLead",
-    link: "https://hrlead.vercel.app/",
-  },
-  {
-    title: "Amfaj",
-    link: "https://amfaj.vercel.app/",
-  },
+  // {
+  //   title: "Inks & Pixels",
+  //   link: "https://inks-pixels.vercel.app/",
+  // },
+  // {
+  //   title: "HrLead",
+  //   link: "https://hrlead.vercel.app/",
+  // },
+  // {
+  //   title: "Amfaj",
+  //   link: "https://amfaj.vercel.app/",
+  // },
 ];
 
 const email = "salamitopezeez@gmail.com";

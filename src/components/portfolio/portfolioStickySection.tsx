@@ -189,70 +189,58 @@ export const PortfolioStickySection = () => {
         <div className={styles.serviceImgWrapper}>
           <div className={styles.serviceImg} ref={serviceImgRef}>
             <div className={styles.img}>
-              <Image
+              <img
                 src="/assets/img1.png"
-                width={250}
-                height={250}
                 alt=""
                 className="object-cover w-full h-full"
                 loading="lazy"
               />
             </div>
             <div className={styles.img}>
-              <Image
+              <img
                 src="/assets/img2.png"
-                width={250}
-                height={250}
+                // width={250}
+                // height={250}
                 alt=""
-                className="object-cover w-full h-full"
-                loading="lazy"
+                className="object-contain w-full h-full"
+                // loading="lazy"
               />
             </div>
             <div className={styles.img}>
-              <Image
+              <img
                 src="/assets/img3.png"
-                width={250}
-                height={250}
                 alt=""
                 className="object-cover w-full h-full"
                 loading="lazy"
               />
             </div>
             <div className={styles.img}>
-              <Image
-                src="/assets/img4.png"
-                width={250}
-                height={250}
+              <img
+                src="/assets/img1.webp"
                 alt=""
                 className="object-cover w-full h-full"
                 loading="lazy"
               />
             </div>
             <div className={styles.img}>
-              <Image
+              <img
                 src="/assets/img5.png"
-                width={250}
-                height={250}
                 alt=""
                 className="object-cover w-full h-full"
                 loading="lazy"
               />
             </div>
             <div className={styles.img}>
-              <Image
+              <img
                 src="/assets/img6.png"
-                width={250}
-                height={250}
                 alt=""
                 className="object-cover w-full h-full"
                 loading="lazy"
               />
             </div>
             <div className={styles.img}>
-              <Image
+              <img
                 src="/assets/img7.png"
-                width={250}
-                height={250}
                 alt=""
                 className="object-cover w-full h-full"
                 loading="lazy"
