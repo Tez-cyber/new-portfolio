@@ -7,7 +7,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import styles from "./portfolio.module.css";
 import { projectDesc, projectTitles } from "@/lib/constants";
-import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
